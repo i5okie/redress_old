@@ -4,7 +4,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+
+# Use mongoid instead of Active Record
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'bson_ext'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -25,7 +29,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -51,6 +55,7 @@ gem "cancan"
 gem "haml-rails"
 gem "simple_form", git: "https://github.com/plataformatec/simple_form"
 gem "uuidtools"
+
 group :development do
   gem "rspec-rails"
   gem "guard-rspec"
