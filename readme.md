@@ -1,12 +1,14 @@
 # REDRESS
 ### Self-Service Portal Project   
 
-Redress is a customer self-service portal project.
-   
+```no-highlight
+Redress is a customer self-service portal.
+This is a work-in-progress project. In its infancy.
+```
    
    
 
-#### Features/Goals
+#### Features (future)
 * Easy on the eyes
 * Responsive
 * Ease of use
@@ -16,9 +18,14 @@ Redress is a customer self-service portal project.
 * Categorized and tagged
 * Will have static pages for quick guides, pdf download, driver download
 * Tutorial videos
+   
+
+   
 
 
 #### Configuration
+   
+
 
 
 #### Requirements
