@@ -3,18 +3,19 @@
 
 Redress is a customer self-service portal project.
    
+   
+   
 
 #### Features/Goals
-* easy on the eyes
-* responsive
-* ease of use
-* easy to manage
-
-* database with products
-* easy lookup / download of supporting documents / manuals / drivers
-* categorized and tagged
-* will have static pages for quick guides, pdf download, driver download
-* tutorial videos
+* Easy on the eyes
+* Responsive
+* Ease of use
+* Easy to manage
+* Database with products
+* Easy lookup / download of supporting documents / manuals / drivers
+* Categorized and tagged
+* Will have static pages for quick guides, pdf download, driver download
+* Tutorial videos
 
 
 #### Configuration
