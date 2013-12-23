@@ -1,12 +1,9 @@
-root = "/srv/apps/redress"
-working_directory root
-pid "#{root}/tmp/pids/unicorn.pid"
-stderr_path "#{root}/log/unicorn.log"
-stdout_path "#{root}/log/unicorn.log"
+working_directory "/srv/apps/redress"
+pid "/srv/apps/redress/tmp/pids/unicorn.pid"
 stderr_path "/srv/apps/redress/log/unicorn.log"
 stdout_path "/srv/apps/redress/log/unicorn.log"
 
-listen "/tmp/unicorn.redress.sock"
+listen "/srv/apps/redress/tmp/unicorn.redress.sock"
 worker_processes 1
 timeout 30
 
