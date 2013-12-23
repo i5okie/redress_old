@@ -56,7 +56,6 @@ gem "analytics-ruby"
 gem "bcrypt-ruby"
 gem "bourbon"
 gem "cancan"
-gem "haml-rails"
 gem "simple_form", git: "https://github.com/plataformatec/simple_form"
 gem "uuidtools"
 
