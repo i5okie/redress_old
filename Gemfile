@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+#source 'http://gems.github.com'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
@@ -7,7 +8,7 @@ gem 'rails', '4.0.2'
 #gem 'sqlite3'
 
 # Use mongoid instead of Active Record
-gem 'mongoid', github: 'mongoid/mongoid'
+gem 'mongoid', git: "https://github.com/mongoid/mongoid"
 gem 'bson_ext'
 
 # Use SCSS for stylesheets
@@ -40,10 +41,13 @@ end
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
+
+gem 'capistrano'
+gem 'rvm-capistrano'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
@@ -63,7 +67,7 @@ end
 
 group :test do
   gem "capybara"
-  gem "capybara-webkit"
+#  gem "capybara-webkit"
   gem "factory_girl_rails"
 end
 
