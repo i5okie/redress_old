@@ -23,6 +23,10 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
+
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -48,6 +52,8 @@ gem 'capistrano', '~> 3.0', require: false, group: :development
 gem 'capistrano-rails', '~> 1.1.0'
 gem 'capistrano-bundler', '>= 1.1.0'
 gem 'capistrano-rvm', '~> 0.1.0'
+
+gem 'capistrano3-unicorn', require: false, group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
