@@ -7,7 +7,7 @@ set :port, 22
 set :application, "redress"
 set :user, "root"
 set :deploy_to, "/srv/apps/#{application}"
-set :deploy_via, :remote_cache
+set :deploy_via, :copy
 set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:i5okie/#{application}.git"
@@ -28,7 +28,7 @@ namespace :deploy do
   end
 
   task :setup_config, roles: :app do
-    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/conf.d/#{application}"
+    sudo "ln -nfs #{current_path}/config/nginx.conf /etc/nginx/conf.d/#{application}.conf"
     sudo "ln -nfs #{current_path}/config/unicorn_init.sh /etc/init.d/unicorn_#{application}"
     run "mkdir -p #{shared_path}/config"
     put File.read("config/database.example.yml"), "#{shared_path}/config/database.yml"
