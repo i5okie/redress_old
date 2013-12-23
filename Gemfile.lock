@@ -152,6 +152,9 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     minitest (4.7.5)
+    mongoid_taggable (1.1.1)
+      mongoid (>= 3)
+      rake
     moped (2.0.0.beta4)
       bson (~> 2.0)
       connection_pool (~> 1.2)
@@ -285,6 +288,7 @@ DEPENDENCIES
   jquery-rails
   mongoid!
   mongoid-grid_fs!
+  mongoid_taggable
   rails (= 4.0.2)
   rails_12factor
   rails_layout

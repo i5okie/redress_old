@@ -26,6 +26,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
 
+gem 'mongoid_taggable'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
