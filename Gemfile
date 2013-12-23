@@ -56,6 +56,8 @@ gem 'capistrano-rvm', '~> 0.1.0'
 
 gem 'capistrano3-unicorn', require: false, group: :development
 
+gem "font-awesome-rails"
+
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
