@@ -56,6 +56,8 @@ gem "analytics-ruby"
 gem "bcrypt-ruby"
 gem "bourbon"
 gem "cancan"
+gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'rails_layout'
 gem "simple_form", git: "https://github.com/plataformatec/simple_form"
 gem "uuidtools"
 
