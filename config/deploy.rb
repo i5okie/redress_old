@@ -12,10 +12,12 @@ set :use_sudo, false
 set :scm, "git"
 set :repository, "git@github.com:i5okie/#{application}.git"
 set :branch, "master"
-
+set :rvm_type, :system
+set :default_shell, "/bin/bash -l"
 
 default_run_options[:pty] = true
 ssh_options[:forward_agent] = true
+ssh_options[:keys] = ["/root/key.pem"]
 
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
