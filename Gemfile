@@ -28,7 +28,8 @@ gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
 
 gem 'carrierwave-imagesorcery'
 
-gem 'mongoid_taggable'
+gem 'mongoid_taggable_with_context'
+gem 'chosen-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

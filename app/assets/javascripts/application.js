@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap-tagsinput
+//= require chosen-jquery
 //= require_tree .
     <script>
     $(function(){

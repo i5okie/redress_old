@@ -7,6 +7,10 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def tag_cloud
+    @tags = Product.tag_counts_on(:tags)
+  end
+
   # GET /products/1
   # GET /products/1.json
   def show
@@ -69,6 +73,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :manufacturer, :model, :description, :link, :image)
+      params.require(:product).permit(:name, :manufacturer, :model, :description, :link, :image, :remote_image_url, :tags)
     end
 end

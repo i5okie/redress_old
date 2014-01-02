@@ -16,26 +16,39 @@
     <%= f.file_field :image %>
   </div>
 
+  <div class="image">
+    <%= f.input :remote_image_url, label: 'or image URL' %>
+  </div>
+
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.input :category %>
+  </div>
+
+  <div class="field">
+    
+    <%= f.input :name %>
   </div>
   <div class="field">
-    <%= f.label :manufacturer %><br>
-    <%= f.text_field :manufacturer %>
+    
+    <%= f.input :manufacturer %>
   </div>
   <div class="field">
-    <%= f.label :model %><br>
-    <%= f.text_field :model %>
+    
+    <%= f.input :model %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    
+    <%= f.input :description %>
   </div>
   <div class="field">
-    <%= f.label :link %><br>
-    <%= f.text_field :link %>
+    
+    <%= f.input :link %>
   </div>
+
+  <div class="field">
+    <%= f.select :tags, { include_blank: true}, { class: 'chosen-select' } %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Category:</strong>
+  <%= @product.category %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @product.name %>
 </p>
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag @product.image_url.to_s, :class=>"img-rounded" %>
+  <%= image_tag @product.image_url(:thumb).to_s, :class=>"img-rounded" %>
 </p>
 
 <p>
@@ -29,6 +34,11 @@
   <strong>Link:</strong>
   <%= @product.link %>
 </p>
-
+<p>
+  <strong>Tags:</strong>
+  <% @product.tags do |t| %>
+  <li><%= t.tag_string %></li>
+<% end %>
+</p>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

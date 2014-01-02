@@ -1,6 +1,6 @@
 class Product
   include Mongoid::Document
-  include Mongoid::Taggable
+  include Mongoid::TaggableWithContext
   mount_uploader :image, ImageUploader
 
   field :name
@@ -8,5 +8,9 @@ class Product
   field :model
   field :description
   field :link
+  field :category
   field :image
+
+  taggable :tags, separator: ','
+
 end
