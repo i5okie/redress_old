@@ -1,5 +1,5 @@
 // import the CSS framework
-@import "bootstrap";
+// @import "bootstrap";
 
 // make all images responsive by default
 img {
@@ -9,6 +9,7 @@ img {
 // override for the 'Home' navigation link
 .navbar-brand {
   font-size: inherit;
+  color: #fff;
   }
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
@@ -43,3 +44,14 @@ section {
   @extend .row;
   margin-top: 20px;
   }
+
+
+.home-heading {
+  font-size: 2em;
+  font-weight: 300;
+}
+
+
+.contacts {
+  font-size: 90%;
+}

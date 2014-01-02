@@ -15,3 +15,8 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+    <script>
+    $(function(){
+      $('#Carousel').carousel();
+    });
+    </script>

@@ -6,6 +6,11 @@
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Redress" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
     <%= csrf_meta_tags %>
   </head>
   <body>
@@ -14,7 +19,7 @@
     </header>
     <main role="main">
        <%= render 'layouts/messages' %>
-       <%= yield %>
+         <%= yield %>
     </main>
   </body>
 </html>
