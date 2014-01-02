@@ -1,0 +1,37 @@
+<div class="container">
+<h1>Listing products</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Manufacturer</th>
+      <th>Model</th>
+      <th>Description</th>
+      <th>Link</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.manufacturer %></td>
+        <td><%= product.model %></td>
+        <td><%= product.description %></td>
+        <td><%= product.link %></td>
+        <td><div class="btn-group pull-right">
+          <%= link_to 'Show', product, :class=>"btn btn-info btn-sm" %>
+          <%= link_to 'Edit', edit_product_path(product), :class=>"btn btn-warning btn-sm" %>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger btn-sm" %></div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product', new_product_path %>
+</div>
