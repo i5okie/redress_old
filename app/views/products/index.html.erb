@@ -1,5 +1,52 @@
 <div class="container">
-<h1>Listing products</h1>
+
+<div class="page-header">
+  <i class="fa fa-list fa-2x"> PRODUCTS</i>
+  <a class="pull-right" data-toggle="modal" href="#new-product-modal"><i class="fa fa-plus-square fa-2x"></i></a>
+</div>
+
+<div class="modal hide fade" id="new-product-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <%= simple_form_for(@product.new, html: {class: 'form-inline', "data-type" => :json }) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+  
+    <%= f.input :remote_image_url, inline_label: 'or image URL' %>
+
+    <%= f.input :category %>
+
+    <%= f.input :name %>
+    
+    <%= f.input :manufacturer %>
+    
+    <%= f.input :model %>
+    
+    <%= f.input :description %>
+    
+    <%= f.input :link %>
+
+    <%= f.input :tags, input_html: { class: 'chosen-select' } %>
+  
+    <%= f.submit %>
+  
+<% end %>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <table class="table table-striped table-hover">
   <thead>
@@ -33,5 +80,5 @@
 
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+
 </div>

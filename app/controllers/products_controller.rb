@@ -7,10 +7,6 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
-  def tag_cloud
-    @tags = Product.tag_counts_on(:tags)
-  end
-
   # GET /products/1
   # GET /products/1.json
   def show

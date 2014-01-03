@@ -14,11 +14,17 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require bootstrap-tagsinput
 //= require chosen-jquery
 //= require_tree .
     <script>
     $(function(){
       $('#Carousel').carousel();
     });
+
+    # enable chosen js
+     $('.chosen-select').chosen
+       allow_single_deselect: true
+       no_results_text: 'No results matched'
+       width: '200px'
+
     </script>

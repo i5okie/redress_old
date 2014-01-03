@@ -1,15 +1,43 @@
 source 'https://rubygems.org'
 #source 'http://gems.github.com'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
 
-# Use mongoid instead of Active Record
+# STORAGE ###################################################################
+# - Use mongoid instead of Active Record
 gem 'mongoid', git: "https://github.com/mongoid/mongoid"
 gem 'bson_ext'
+gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
+gem 'mongoid-tags-arent-hard'
+
+# - Use Carrierwave-mongoid for uploading files
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+# - Use Carrierwave with imagesorcery for image manipulation
+gem 'carrierwave-imagesorcery'
+
+
+
+# PRESENTATION ##############################################################
+# - Use bootstrap with sass
+gem 'bootstrap-sass', '~> 3.0.3.0'
+gem 'font-awesome-sass'
+gem 'bootstrap-tagsinput-rails'
+gem "bourbon"
+gem 'chosen-rails'
+gem "haml-rails"
+
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+
+gem "simple_form", git: "https://github.com/plataformatec/simple_form"
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -23,55 +51,45 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
-gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
 
-gem 'carrierwave-imagesorcery'
 
-gem 'mongoid_taggable_with_context'
-gem 'chosen-rails'
+# SECURITY ##################################################################
+# - Use ActiveModel has_secure_password
+gem "bcrypt-ruby"
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
+# - uuid utility
+gem "uuidtools"
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# - use CanCan for authorization  docs: http://rdoc.info/github/ryanb/cancan
+gem "cancan"
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder'
+
+
+# DEPLOYMENT ################################################################
+# - Use unicorn as the app server
+gem 'unicorn'
+
+# - Use Capistrano for deployment
+#gem 'capistrano', '~> 3.0', require: false, group: :development
+#gem 'capistrano-rails', '~> 1.1.0'
+#gem 'capistrano-bundler', '>= 1.1.0'
+#gem 'capistrano-rvm', '~> 0.1.0'
+#gem 'capistrano3-unicorn', require: false, group: :development
+
+
+
+# MONITORING ################################################################
+# - Use Segment.io for monitoring docs: https://segment.io/libraries/ruby#getting-started
+gem "analytics-ruby"
+
+
+
+# ETC #######################################################################
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
-
-# Use unicorn as the app server
-gem 'unicorn'
-
-# Use Capistrano for deployment
-gem 'capistrano', '~> 3.0', require: false, group: :development
-gem 'capistrano-rails', '~> 1.1.0'
-gem 'capistrano-bundler', '>= 1.1.0'
-gem 'capistrano-rvm', '~> 0.1.0'
-
-gem 'capistrano3-unicorn', require: false, group: :development
-
-gem "font-awesome-rails"
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-gem "analytics-ruby"
-gem "bcrypt-ruby"
-gem "bourbon"
-gem "cancan"
-gem 'bootstrap-sass', '~> 3.0.3.0'
-gem 'rails_layout'
-gem "simple_form", git: "https://github.com/plataformatec/simple_form"
-gem "uuidtools"
 
 group :development do
   gem "rspec-rails"
@@ -79,9 +97,10 @@ group :development do
 end
 
 group :test do
-  gem "capybara"
-#  gem "capybara-webkit"
-  gem "factory_girl_rails"
+  # docs https://github.com/cucumber/cucumber/wiki
+  gem 'cucumber-rails', :require => false
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
 end
 
 group :production do
