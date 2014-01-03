@@ -9,11 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap-sass
  *= require chosen
  */
 
-@import "bootstrap";
-@import "bootstrap-theme";
 @import "font-awesome";
 @import "framework_and_overrides";
 @import "home";
