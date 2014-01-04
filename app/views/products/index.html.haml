@@ -1,0 +1,28 @@
+.container
+  .page-header
+    %i.fa.fa-list.fa-1x PRODUCTS
+    %a.pull-right{:href => new_product_path}
+      %i.fa.fa-plus-square.fa-1x Add Product
+  %table.table.table-striped.table-hover
+    %thead
+      %tr
+        %th Name
+        %th Manufacturer
+        %th Model
+        %th Description
+        %th Link
+        %th
+    %tbody
+      - @products.each do |product|
+        %tr
+          %td= product.name
+          %td= product.manufacturer
+          %td= product.model
+          %td= product.description
+          %td= product.link
+          %td
+            .btn-group.pull-right
+              = link_to 'Show', product, :class=>"btn btn-info btn-sm"
+              = link_to 'Edit', edit_product_path(product), :class=>"btn btn-warning btn-sm"
+              = link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger btn-sm"
+  %br

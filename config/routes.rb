@@ -1,4 +1,6 @@
 Redress::Application.routes.draw do
+  resources :foos
+
   resources :products
 
   get "home/index"

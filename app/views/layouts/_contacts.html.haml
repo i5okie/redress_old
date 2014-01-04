@@ -1,0 +1,22 @@
+.jumbotron
+  .row
+    .col-md-6
+      %h3.home-heading CONTACT
+      .well.fix-height
+        %p For assistance with your technical questions, here are some ways to get in touch with us:
+        %ul.list-inline.contacts.text-center
+          %li
+            Toll-Free:
+            %a{:href => "tel:18006615570"} (800) 661-5570
+          %li
+            Canada:
+            %a{:href => "tel:12504933201"} (250) 493-3201
+    .col-md-6
+      %h3.home-heading CONNECT
+      .well.fix-height
+        %p For help with your computer, connect with one of our technicians now. Please enter the provided invitation code:
+        %form.form-inline{:role => "form"}
+          .input-group
+            %input.form-control{:placeholder => "Invitation Code", :type => "text"}
+              %span.input-group-btn
+                %button.btn.btn-default{:type => "button"} Join

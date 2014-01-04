@@ -1,0 +1,43 @@
+%p#notice= notice
+
+.container
+  .row
+
+    %strong Category:
+    
+
+    .jambotron.moon
+      .row
+        .col-md-6
+          %p
+            .h1
+              .h2.text-muted= @product.manufacturer
+              = @product.name
+          %p
+            .lead= @product.description
+        .col-md-6
+          = image_tag @product.image_url(:thumb).to_s, :class=>"img-rounded"
+
+    %ol.breadcrumb
+      %li
+        %span.label.label-info= @product.category
+      %li
+        %a{:href => "#"} Library
+      %li.active Data
+
+%p
+  %strong Model:
+  = @product.model
+
+%p
+  %strong Link:
+  = @product.link
+
+%p
+  %strong Tags:
+  - @product.tags.each do |tg|
+    %span.label.label-info= tg
+
+= link_to 'Edit', edit_product_path(@product)
+|
+\#{link_to 'Back', products_path}

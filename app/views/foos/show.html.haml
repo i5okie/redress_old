@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Blob:
+  = @foo.blob
+%p
+  %b Bleep:
+  = @foo.bleep
+
+= link_to 'Edit', edit_foo_path(@foo)
+\|
+= link_to 'Back', foos_path
