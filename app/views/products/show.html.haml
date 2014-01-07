@@ -1,43 +1,112 @@
-%p#notice= notice
-
 .container
   .row
 
-    %strong Category:
-    
-
-    .jambotron.moon
-      .row
-        .col-md-6
-          %p
+    %p
+      .jumbotron.moon
+        .row
+          .col-lg-8
             .h1
               .h2.text-muted= @product.manufacturer
               = @product.name
+            %p
+              .lead= @product.description
+          .col-lg-4
+            %p
+              = image_tag @product.image_url(:thumb).to_s, :class=>"img-rounded"
+      %ol.breadcrumb
+        %li
+          %a{:href => "#"}= link_to 'Resources', products_path
+        %li
+          %a{:href => "#"}= @product.category
+        %li.active= @product.name
+  .row
+    .col-lg-12
+      .panel.panel-default
+        .panel-heading
+          %h3.panel-title Available Resources
+        .panel-body
           %p
-            .lead= @product.description
-        .col-md-6
-          = image_tag @product.image_url(:thumb).to_s, :class=>"img-rounded"
-
-    %ol.breadcrumb
-      %li
-        %span.label.label-info= @product.category
-      %li
-        %a{:href => "#"} Library
-      %li.active Data
-
-%p
-  %strong Model:
-  = @product.model
-
-%p
-  %strong Link:
-  = @product.link
-
-%p
-  %strong Tags:
-  - @product.tags.each do |tg|
-    %span.label.label-info= tg
-
-= link_to 'Edit', edit_product_path(@product)
-|
-\#{link_to 'Back', products_path}
+            Applies to following models:
+            - @product.apms.each do |tg|
+              %span.label.label-default= tg
+        %table.table.table-striped.table-hover
+          %thead
+            %tr
+              %th
+                Filename
+              %th
+                Download
+          %tr
+            %td
+              file
+            %td
+              %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
+                %i.fa.fa-download.fa-fw
+                %strong
+                  PDF
+      .well
+        %ul.nav.nav-tabs
+          %li.active
+            %a{"data-toggle" => "tab", :href => "#home"} Profile
+          %li
+            %a{"data-toggle" => "tab", :href => "#profile"} Password
+        #myTabContent.tab-content
+          #home.tab-pane.active.in
+            %form#tab
+              %label Username
+              %input.input-xlarge{:type => "text", :value => "jsmith"}
+                %label First Name
+                %input.input-xlarge{:type => "text", :value => "John"}
+                  %label Last Name
+                  %input.input-xlarge{:type => "text", :value => "Smith"}
+                    %label Email
+                    %input.input-xlarge{:type => "text", :value => "jsmith@yourcompany.com"}
+                      %label Address
+                      %textarea.input-xlarge{:rows => "3", :value => "Smith"}
+                        :preserve
+                          2817 S 49th
+                              Apt 314
+                              San Jose, CA 95101
+                                                      %label Time Zone
+                      %select#DropDownTimezone.input-xlarge{:name => "DropDownTimezone"}
+                        %option{:value => "-12.0"} (GMT -12:00) Eniwetok, Kwajalein
+                        %option{:value => "-11.0"} (GMT -11:00) Midway Island, Samoa
+                        %option{:value => "-10.0"} (GMT -10:00) Hawaii
+                        %option{:value => "-9.0"} (GMT -9:00) Alaska
+                        %option{:selected => "selected", :value => "-8.0"} (GMT -8:00) Pacific Time (US & Canada)
+                        %option{:value => "-7.0"} (GMT -7:00) Mountain Time (US & Canada)
+                        %option{:value => "-6.0"} (GMT -6:00) Central Time (US & Canada), Mexico City
+                        %option{:value => "-5.0"} (GMT -5:00) Eastern Time (US & Canada), Bogota, Lima
+                        %option{:value => "-4.0"} (GMT -4:00) Atlantic Time (Canada), Caracas, La Paz
+                        %option{:value => "-3.5"} (GMT -3:30) Newfoundland
+                        %option{:value => "-3.0"} (GMT -3:00) Brazil, Buenos Aires, Georgetown
+                        %option{:value => "-2.0"} (GMT -2:00) Mid-Atlantic
+                        %option{:value => "-1.0"} (GMT -1:00 hour) Azores, Cape Verde Islands
+                        %option{:value => "0.0"} (GMT) Western Europe Time, London, Lisbon, Casablanca
+                        %option{:value => "1.0"} (GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris
+                        %option{:value => "2.0"} (GMT +2:00) Kaliningrad, South Africa
+                        %option{:value => "3.0"} (GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg
+                        %option{:value => "3.5"} (GMT +3:30) Tehran
+                        %option{:value => "4.0"} (GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi
+                        %option{:value => "4.5"} (GMT +4:30) Kabul
+                        %option{:value => "5.0"} (GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent
+                        %option{:value => "5.5"} (GMT +5:30) Bombay, Calcutta, Madras, New Delhi
+                        %option{:value => "5.75"} (GMT +5:45) Kathmandu
+                        %option{:value => "6.0"} (GMT +6:00) Almaty, Dhaka, Colombo
+                        %option{:value => "7.0"} (GMT +7:00) Bangkok, Hanoi, Jakarta
+                        %option{:value => "8.0"} (GMT +8:00) Beijing, Perth, Singapore, Hong Kong
+                        %option{:value => "9.0"} (GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk
+                        %option{:value => "9.5"} (GMT +9:30) Adelaide, Darwin
+                        %option{:value => "10.0"} (GMT +10:00) Eastern Australia, Guam, Vladivostok
+                        %option{:value => "11.0"} (GMT +11:00) Magadan, Solomon Islands, New Caledonia
+                        %option{:value => "12.0"} (GMT +12:00) Auckland, Wellington, Fiji, Kamchatka
+                      %div
+                        %button.btn.btn-primary Update
+          #profile.tab-pane.fade
+            %form#tab2
+              %label New Password
+              %input.input-xlarge{:type => "password"}
+                %div
+                  %button.btn.btn-primary Update
+  %br
+  = link_to 'Edit', edit_product_path(@product), :class => 'btn btn-warning'

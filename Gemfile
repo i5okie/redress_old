@@ -27,6 +27,7 @@ gem 'bootstrap-tagsinput-rails'
 gem "bourbon"
 gem 'chosen-rails'
 gem "haml-rails"
+gem 'jquery-fileupload-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -34,6 +35,7 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+# Using Simple_Form for form helper
 gem "simple_form", git: "https://github.com/plataformatec/simple_form"
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -47,9 +49,6 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 
 

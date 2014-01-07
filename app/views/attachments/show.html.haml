@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @attachment.title
+%p
+  %b Description:
+  = @attachment.description
+%p
+  %b Document:
+  = @attachment.document
+
+= link_to 'Edit', edit_attachment_path(@attachment)
+\|
+= link_to 'Back', attachments_path

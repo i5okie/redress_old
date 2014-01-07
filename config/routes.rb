@@ -1,4 +1,6 @@
 Redress::Application.routes.draw do
+  resources :attachments
+
   resources :foos
 
   resources :products

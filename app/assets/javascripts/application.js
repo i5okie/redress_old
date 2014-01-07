@@ -15,16 +15,16 @@
 //= require turbolinks
 //= require bootstrap
 //= require chosen-jquery
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require_tree .
-    <script>
+<script>
     $(function(){
       $('#Carousel').carousel();
     });
-
+</script>
     # enable chosen js
      $('.chosen-select').chosen
        allow_single_deselect: true
        no_results_text: 'No results matched'
        width: '200px'
-
-    </script>

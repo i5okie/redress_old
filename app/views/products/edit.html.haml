@@ -1,5 +1,10 @@
-%h1 Editing product
-= render 'form'
-= link_to 'Show', @product
-|
-\#{link_to 'Back', products_path}
+%ul#breadcrumbs-two
+	%li
+		%a EDITING
+	%li
+		%a{:href=> "#"}= @product.name
+.container
+	= render 'form'
+	.btn-group.form-actions
+		= link_to 'Show', @product, :class => 'btn btn-info'
+		= link_to 'Cancel', products_path, :class => 'btn btn-danger'

@@ -1,4 +1,4 @@
-= simple_form_for(@product, html: {class: 'form-inline'}) do |f|
+= simple_form_for(@product, html: {role: "form", class: "form-horizontal"}) do |f|
   - if @product.errors.any?
     #error_explanation
       %h2
@@ -7,15 +7,31 @@
       %ul
         - @product.errors.full_messages.each do |msg|
           %li= msg
-  = f.label :image
-  %br
+
+  %p
+    .form-group
+      = f.input :name, input_html: { class: 'form-control' }
+  .form-group
+    = f.label :image
     = f.file_field :image
-    = f.input :remote_image_url, inline_label: 'or image URL'
-    = f.input :category
-    = f.input :name
-    = f.input :manufacturer
-    = f.input :model
-    = f.input :description
-    = f.input :link
+  .form-group
+    .input-group
+      %span.input-group-addon Image URL
+      = f.input :remote_image_url, :label => false, input_html: { class: 'form-control' }
+
+  .form-group
+    = f.input :category, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :manufacturer, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :model, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :description, input_html: { class: 'form-control' }
+  .form-group
+    = f.input :link, input_html: { class: 'form-control' }
+  .form-group
     = f.input :tags, input_html: { class: 'chosen-select' }
-    = f.submit
+  .form-group
+    = f.input :apms, label: 'Applicable Models', input_html: { class: 'form-control' }
+  .form-group.form-actions
+    = f.button :submit, :class => "btn btn-warning"
