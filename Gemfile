@@ -96,6 +96,7 @@ end
 group :development do
   gem "rspec-rails"
   gem "guard-rspec"
+  gem 'rails_layout', github: 'RailsApps/rails_layout'
 end
 
 group :test do

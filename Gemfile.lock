@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/RailsApps/rails_layout.git
+  revision: 7fd44b4ec8ae9e24748cd16163df2c11f494bb5f
+  specs:
+    rails_layout (0.5.11)
+
+GIT
   remote: git://github.com/ahoward/mongoid-grid_fs.git
   revision: 059012a2c2a9e0a5d6e67137752c3e918689c88a
   specs:
@@ -309,6 +315,7 @@ DEPENDENCIES
   mongoid-tags-arent-hard
   rails (= 4.0.2)
   rails_12factor
+  rails_layout!
   rspec-rails
   sass-rails (~> 4.0.0)
   sdoc

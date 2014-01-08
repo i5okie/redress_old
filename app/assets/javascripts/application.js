@@ -12,13 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require bootstrap
-//= require jquery-fileupload/basic
-//= require jquery-fileupload/vendor/tmpl
+// Note: Foundation 5 won't work with turbolinks
+//= require foundation
 //= require_tree .
-<script>
-$(function(){
-  $('#Carousel').carousel();
+$(function() {
+  $(document).foundation();
 });
-</script>
