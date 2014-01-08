@@ -1,6 +1,32 @@
 .container
-  = render 'layouts/slides'
-  .jambotron
-    = render 'layouts/contacts'
-  %h1 Home#index
-  %p Find me in app/views/home/index.html.erb
+  = render 'layouts/contacts'
+  .row
+    .col-md-12
+      %h4.home-heading RESOURCES
+      %p
+        Learn how to install and configure your devices / download documentation and drivers.
+  .row
+    / Nav tabs
+    .col-lg-3
+      %ul.nav.nav-pills.nav-stacked
+        %li
+          %a{"data-toggle" => "tab", :href => "#comp"} COMPUTERS
+        %li
+          %a{"data-toggle" => "tab", :href => "#serv", :class => "active"} SERVERS
+        %li
+          %a{"data-toggle" => "tab", :href => "#print"} PRINTERS
+        %li
+          %a{"data-toggle" => "tab", :href => "#pos"} POINT OF SALE
+        %li
+          %a{"data-toggle" => "tab", :href => "#other"} OTHER
+    / Tab panes
+    .col-lg-9
+      .tab-content
+        #comp.tab-pane.fade ...home tabbbbbb
+        #serv.tab-pane.active
+          - @products.each do |product|
+            .col-md-3.plink
+              = link_to product.name, product, :class=>"label label-info"
+        #print.tab-pane.fade ...aaaahdhhdfd
+        #pos.tab-pane.fade ...coooll
+        #other.tab-pane.fade ...coooll

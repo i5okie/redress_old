@@ -1,4 +1,4 @@
-= simple_form_for(@product, html: {role: "form", class: "form-horizontal"}) do |f|
+= simple_form_for(@product, html: {role: "form", class: "form form-vertical"}) do |f|
   - if @product.errors.any?
     #error_explanation
       %h2
@@ -9,29 +9,32 @@
           %li= msg
 
   %p
-    .form-group
+    .col-xs-9.col-md-9
       = f.input :name, input_html: { class: 'form-control' }
-  .form-group
+  .col-xs-4.col-md-4
+    = f.input :manufacturer, input_html: { class: 'form-control' }
+  .col-xs-5.col-md-5
+    = f.input :model, input_html: { class: 'form-control' }
+  .col-xs-4.col-md-4
     = f.label :image
-    = f.file_field :image
-  .form-group
+    = f.file_field :image, input_html: { class: 'form-control'}
+  .col-xs-8.col-md-8
     .input-group
       %span.input-group-addon Image URL
-      = f.input :remote_image_url, :label => false, input_html: { class: 'form-control' }
+      = f.input :remote_image_url, :label => false
 
-  .form-group
+  .col-xs-4.col-md-4
     = f.input :category, input_html: { class: 'form-control' }
-  .form-group
-    = f.input :manufacturer, input_html: { class: 'form-control' }
-  .form-group
-    = f.input :model, input_html: { class: 'form-control' }
-  .form-group
-    = f.input :description, input_html: { class: 'form-control' }
-  .form-group
+
+  .col-xs-6.col-md-6
     = f.input :link, input_html: { class: 'form-control' }
-  .form-group
+
+  .col-xs-6.col-md-6
+    = f.input :description, input_html: { class: 'form-control' }
+  
+  .col-xs-6.col-md-6
     = f.input :tags, input_html: { class: 'chosen-select' }
-  .form-group
+  .col-xs-6.col-md-6
     = f.input :apms, label: 'Applicable Models', input_html: { class: 'form-control' }
-  .form-group.form-actions
+  .col-xs-12.col-md-12.form-actions
     = f.button :submit, :class => "btn btn-warning"

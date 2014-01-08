@@ -1,4 +1,4 @@
-// import the CSS framework
+/* // import the CSS framework
 // @import "bootstrap";
 
 // make all images responsive by default
@@ -31,6 +31,7 @@ img {
   @extend .btn-primary;
   @extend .btn-lg;
   }
+
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
@@ -40,14 +41,15 @@ main {
   width: 100%;
   margin-top: 51px; // accommodate the navbar
   }
+  
 section {
   @extend .row;
   margin-top: 20px;
-  }
+  } */
 
 
 .home-heading {
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 300;
 }
 
@@ -132,4 +134,49 @@ section {
 #breadcrumbs-two .current::after,
 #breadcrumbs-two .current::before{
   content: normal;
+}
+
+.carousel-control.left {
+  background: none;
+}
+
+.carousel-control.right {
+  background: none;
+}
+
+.carousel-control .cntrl {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+}
+
+.plink .label {
+  font-size: 1em;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.well.lead.one p {
+  padding-bottom: 23px;
+}
+.well.lead.two p {
+  padding-bottom: 20px;
+}
+.well.lead.two form {
+  padding-bottom: 5px;
+}
+
+.well {
+  background-color: #fff;
+  border-radius: 0;
+  border: none;
+}
+
+.container .jumbotron {
+  border-radius: 2px;
+}
+
+.panel {
+  width: 100%;
 }
