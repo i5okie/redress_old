@@ -1,182 +1,48 @@
-/* // import the CSS framework
-// @import "bootstrap";
+// import the CSS framework
+@import "foundation";
 
-// make all images responsive by default
-img {
-  @extend .img-responsive;
-  margin: 0 auto;
-  }
 // override for the 'Home' navigation link
-.navbar-brand {
-  font-size: inherit;
-  color: #fff;
-  }
+.top-bar .name {
+  font-size: rem-calc(13);
+  line-height: 45px; }
+.top-bar .name a {
+  font-weight: normal;
+  color: white;
+  padding: 0 15px; }
 
 // THESE ARE EXAMPLES YOU CAN MODIFY
+// create mixins using Foundation classes
+@mixin twelve-columns {
+  @extend .small-12;
+  @extend .columns;
+  }
+@mixin six-columns-centered {
+  @extend .small-6;
+  @extend .columns;
+  @extend .text-center;
+  }
 // create your own classes
 // to make views framework-neutral
 .column {
-  @extend .col-md-6;
-  @extend .text-center;
+  @include six-columns-centered;
   }
 .form {
-  @extend .col-md-6;
+  @include grid-column(6);
   }
 .form-centered {
-  @extend .col-md-6;
-  @extend .text-center;
+  @include six-columns-centered;
   }
 .submit {
-  @extend .btn;
-  @extend .btn-primary;
-  @extend .btn-lg;
+  @extend .button;
+  @extend .radius;
   }
-
 // apply styles to HTML elements
 // to make views framework-neutral
 main {
-  @extend .container;
+  @include twelve-columns;
   background-color: #eee;
-  padding-bottom: 80px;
-  width: 100%;
-  margin-top: 51px; // accommodate the navbar
   }
-  
 section {
   @extend .row;
   margin-top: 20px;
-  } */
-
-
-.home-heading {
-  font-size: 3em;
-  font-weight: 300;
-}
-
-
-.contacts {
-  font-size: 90%;
-}
-
-.titlez {
-  padding-top: 60px;
-}
-
-.moon {
-  /** To edit this background, follow this link:
-  http://svgeneration.com/generate/Construction-Paper?background=ffffff&overlay=ffffff&overlay-transparency=0.72&
-  */
-  background-color: #ffffff;
-  background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZlcnNpb249JzEuMScgd2lkdGg9JzMwMCcgaGVpZ2h0PSczMDAnPgoJPGRlZnM+CgkJPGZpbHRlciBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9J3NSR0InIGlkPSdmaWx0ZXIzMDAxJz4KCQkJPGZlVHVyYnVsZW5jZSB0eXBlPSdmcmFjdGFsTm9pc2UnIGJhc2VGcmVxdWVuY3k9JzEwMCAuODUnIG51bU9jdGF2ZXM9JzEnLz4KCQk8L2ZpbHRlcj4KCTwvZGVmcz4KCTxyZWN0IGhlaWdodD0nMjAwJScgd2lkdGg9JzIwMCUnIHN0eWxlPSdmaWx0ZXI6dXJsKCNmaWx0ZXIzMDAxKScgLz4KCTxyZWN0IGhlaWdodD0nMjAwJScgd2lkdGg9JzIwMCUnIHN0eWxlPSdmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjAuNTM7Jy8+Cjwvc3ZnPg==');
-}
-
-
-#breadcrumbs-two{
-  overflow: hidden;
-  width: 100%;
-}
-
-#breadcrumbs-two li{
-  float: left;
-  margin: 0 .5em 0 1em;
-}
-
-#breadcrumbs-two a{
-  background: #ddd;
-  padding: .7em 1em;
-  float: left;
-  text-decoration: none;
-  color: #444;
-  text-shadow: 0 1px 0 rgba(255,255,255,.5); 
-  position: relative;
-}
-
-#breadcrumbs-two a:hover{
-  background: #99db76;
-}
-
-#breadcrumbs-two a::before{
-  content: "";
-  position: absolute;
-  top: 50%; 
-  margin-top: -1.5em;   
-  border-width: 1.5em 0 1.5em 1em;
-  border-style: solid;
-  border-color: #ddd #ddd #ddd transparent;
-  left: -1em;
-}
-
-#breadcrumbs-two a:hover::before{
-  border-color: #99db76 #99db76 #99db76 transparent;
-}
-
-#breadcrumbs-two a::after{
-  content: "";
-  position: absolute;
-  top: 50%; 
-  margin-top: -1.5em;   
-  border-top: 1.5em solid transparent;
-  border-bottom: 1.5em solid transparent;
-  border-left: 1em solid #ddd;
-  right: -1em;
-}
-
-#breadcrumbs-two a:hover::after{
-  border-left-color: #99db76;
-}
-
-#breadcrumbs-two .current,
-#breadcrumbs-two .current:hover{
-  font-weight: bold;
-  background: none;
-}
-
-#breadcrumbs-two .current::after,
-#breadcrumbs-two .current::before{
-  content: normal;
-}
-
-.carousel-control.left {
-  background: none;
-}
-
-.carousel-control.right {
-  background: none;
-}
-
-.carousel-control .cntrl {
-  position: absolute;
-  top: 50%;
-  z-index: 5;
-  display: inline-block;
-}
-
-.plink .label {
-  font-size: 1em;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
-
-.well.lead.one p {
-  padding-bottom: 23px;
-}
-.well.lead.two p {
-  padding-bottom: 20px;
-}
-.well.lead.two form {
-  padding-bottom: 5px;
-}
-
-.well {
-  background-color: #fff;
-  border-radius: 0;
-  border: none;
-}
-
-.container .jumbotron {
-  border-radius: 2px;
-}
-
-.panel {
-  width: 100%;
-}
+  }

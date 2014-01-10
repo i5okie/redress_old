@@ -20,8 +20,8 @@ gem 'carrierwave-imagesorcery'
 
 
 # PRESENTATION ##############################################################
-# - Use bootstrap with sass
-gem 'bootstrap-sass', '~> 3.0.3.0'
+# - Use zurb foundation framework
+gem 'foundation-rails'
 gem 'font-awesome-sass'
 gem 'bootstrap-tagsinput-rails'
 gem "bourbon"
@@ -84,6 +84,9 @@ gem "analytics-ruby"
 
 
 # ETC #######################################################################
+group :assets do
+	gem 'compass-rails'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -93,6 +96,7 @@ end
 group :development do
   gem "rspec-rails"
   gem "guard-rspec"
+  gem 'rails_layout', github: 'RailsApps/rails_layout'
 end
 
 group :test do
