@@ -2,7 +2,7 @@ class Product
   include Mongoid::Document
   include Mongoid::TagsArentHard
   mount_uploader :image, ImageUploader
-  embeds_many :attachments
+  has_many :attachments
   belongs_to :category
 
   field :name

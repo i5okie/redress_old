@@ -1,4 +1,4 @@
-= simple_form_for(@product, html: {role: "form", class: "form form-vertical"}) do |f|
+= simple_form_for(@product) do |f|
   - if @product.errors.any?
     #error_explanation
       %h2
@@ -8,33 +8,38 @@
         - @product.errors.full_messages.each do |msg|
           %li= msg
 
-  %p
-    .col-xs-9.col-md-9
+  .row
+    .large-12.columns
       = f.input :name, input_html: { class: 'form-control' }
-  .col-xs-4.col-md-4
-    = f.input :manufacturer, input_html: { class: 'form-control' }
-  .col-xs-5.col-md-5
-    = f.input :model, input_html: { class: 'form-control' }
-  .col-xs-4.col-md-4
-    = f.label :image
-    = f.file_field :image, input_html: { class: 'form-control'}
-  .col-xs-8.col-md-8
-    .input-group
-      %span.input-group-addon Image URL
-      = f.input :remote_image_url, :label => false
+  .row
+    .large-6.columns
+      = f.input :manufacturer, input_html: { class: 'form-control' }
+    .large-6.columns
+      = f.input :model, input_html: { class: 'form-control' }
+  .row
+    .large-6.columns
+      = f.label :image
+      = f.file_field :image, input_html: { class: 'form-control'}
+    .large-6.columns
+      = f.input :remote_image_url
 
-  .col-xs-4.col-md-4
-    = f.collection_select :category, Category.all, :id, :name, input_html: { class: 'form-control' }
+  .row
+    .large-6.columns
+      = f.input :description, input_html: { class: 'form-control' }
+    .large-6.columns
+      = f.input :category do
+        = f.select :category, Category.all.map { |c| [c.name, c.id]}, include_blank: true, :selected => @product.category.id
 
-  .col-xs-6.col-md-6
-    = f.input :link, input_html: { class: 'form-control' }
-
-  .col-xs-6.col-md-6
-    = f.input :description, input_html: { class: 'form-control' }
+  .row
+    .large-12.columns
+      = f.input :link, input_html: { class: 'form-control' }
   
-  .col-xs-6.col-md-6
-    = f.input :tags, input_html: { class: 'chosen-select' }
-  .col-xs-6.col-md-6
-    = f.input :apms, label: 'Applicable Models', input_html: { class: 'form-control' }
-  .col-xs-12.col-md-12.form-actions
-    = f.button :submit, :class => "btn btn-warning"
+  .row
+    .large-12.columns
+      = f.input :tags, input_html: { class: 'chosen-select', id: 'tags'}
+  .row
+    .large-12.columns
+      = f.input :apms, label: 'Applicable Models', input_html: { class: 'form-control', id: 'apms' }
+  .row
+    .large-12.columns
+    = f.button :submit, :class => "button secondary"

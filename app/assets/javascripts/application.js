@@ -13,5 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require jquery.tagsinput
 //= require_tree .
 $(document).foundation();
+$('#tags').tagsInput();
+$('#apms').tagsInput();

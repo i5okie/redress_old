@@ -28,7 +28,7 @@ gem "bourbon"
 gem 'chosen-rails'
 gem "haml-rails"
 gem 'jquery-fileupload-rails'
-
+gem 'tagsinput-rails'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

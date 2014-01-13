@@ -3,7 +3,7 @@ class Attachment
   include Mongoid::TagsArentHard
   include Mongoid::Timestamps::Created  
 
-  embedded_in :product
+  belongs_to :product
   
   field :title
   field :description

@@ -1,8 +1,10 @@
-%ul#breadcrumbs
-	%li
-		%a EDITING
-	%li
-		%a{:href=> "#"}= @product.name
+.row
+	.large-12.columns
+		%ul#breadcrumbs-two
+			%li
+				%a EDITING
+			%li
+				%a{:href=> "#"}= @product.name
 .container
 	= render 'form'
 	.row
