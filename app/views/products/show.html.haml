@@ -14,65 +14,59 @@
   .row
     %ol.breadcrumbs
       %li
-        %a{:href => "#"}= link_to 'Resources', products_path
+        %a{:href => "#"}= link_to 'Support Resources', root_path
       %li
         %a{:href => "#"}= @product.category.name
-      %li.active= @product.name
+      %li.active= @product.manufacturer + ' ' + @product.name
   .row
-    .col-lg-12
-      .panel.panel-default
-        .panel-heading
-          %h3.panel-title Available Resources
-        .panel-body
-          %p
-            Applies to following models:
-            - @product.apms.each do |tg|
-              %span.label.label-default= tg
-        / Nav tabs
-        %dl.tabs{"data-tab" => "true"}
-          %dd.active
-            %a{:href => "#panel1a"} DOCUMENTS
-          %dd
-            %a{:href => "#panel2a"} DRIVERS
-          %dd
-            %a{:href => "#panel3a"} VIDEOS
-        .tabs-content
-          #panel1a.content.active
-            %table.table.table-striped.table-hover
-              %thead
-                %tr
-                  %th{width: 850}
-                    Filename
-                  %th{width: 100}
-                    Download
+    .large-12.columns
+      %h3 Available Resources
+      .panel
+        %p
+          Applies to following models:
+          - @product.apms.each do |tg|
+            %span.label.label-default= tg
+      / Nav tabs
+      %dl.tabs{"data-tab" => "true"}
+        %dd.active
+          %a{:href => "#documents"} DOCUMENTS
+        %dd
+          %a{:href => "#drivers"} DRIVERS
+        %dd
+          %a{:href => "#videos"} VIDEOS
+      .tabs-content
+        #documents.content.active
+          %table.table.table-striped.table-hover
+            %thead
               %tr
-                %td
-                  file
-                %td
-                  %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
-                    %i.fa.fa-download.fa-fw
-                    %strong
-                      PDF
-          #panel2a.content
-            %table.table.table-striped.table-hover
-              %thead
-                %tr
-                  %th{width: 850}
-                    Filename
-                  %th{width: 100}
-                    Download
+                %th{width: 850}
+                  Filename
+                %th{width: 100}
+                  Download
+            %tr
+              %td
+                file
+              %td
+                %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
+                  %i.fa.fa-download.fa-fw
+                  %strong
+                    PDF
+        #drivers.content
+          %table.table.table-striped.table-hover
+            %thead
               %tr
-                %td
-                  file
-                %td
-                  %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
-                    %i.fa.fa-download.fa-fw
-                    %strong
-                      ZIP
-          #panel3a.content
-            %a.button.small.radius.disabled
-              No Videos :(
-
-        
-  %br
-  = link_to 'Edit', edit_product_path(@product), :class => 'btn btn-warning'
+                %th{width: 850}
+                  Filename
+                %th{width: 100}
+                  Download
+            %tr
+              %td
+                file
+              %td
+                %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
+                  %i.fa.fa-download.fa-fw
+                  %strong
+                    ZIP
+        #videos.content
+          %a.button.small.radius.disabled
+            No Videos :(

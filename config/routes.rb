@@ -1,4 +1,8 @@
 Redress::Application.routes.draw do
+  resources :videos
+
+  resources :documents
+
   resources :attachments
   resources :categories
   resources :products

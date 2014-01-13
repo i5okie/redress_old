@@ -1,16 +1,12 @@
 class Attachment
   include Mongoid::Document
-  include Mongoid::TagsArentHard
   include Mongoid::Timestamps::Created  
-
   belongs_to :product
-  
-  field :title
+
+  mount_uploader :filelocation, DocumentUploader
+
+  field :name
   field :description
-  field :document
-
-  mount_uploader :document, DocumentUploader
-
-  taggable_with :tags, separator: ","
-
+  field :filetype
+  field :filelocation
 end

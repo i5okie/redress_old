@@ -23,7 +23,7 @@ describe AttachmentsController do
   # This should return the minimal set of attributes required to create a valid
   # Attachment. As you add validations to Attachment, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "title" => "MyString" } }
+  let(:valid_attributes) { { "name" => "MyString" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -85,14 +85,14 @@ describe AttachmentsController do
       it "assigns a newly created but unsaved attachment as @attachment" do
         # Trigger the behavior that occurs when invalid params are submitted
         Attachment.any_instance.stub(:save).and_return(false)
-        post :create, {:attachment => { "title" => "invalid value" }}, valid_session
+        post :create, {:attachment => { "name" => "invalid value" }}, valid_session
         assigns(:attachment).should be_a_new(Attachment)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Attachment.any_instance.stub(:save).and_return(false)
-        post :create, {:attachment => { "title" => "invalid value" }}, valid_session
+        post :create, {:attachment => { "name" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -106,8 +106,8 @@ describe AttachmentsController do
         # specifies that the Attachment created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Attachment.any_instance.should_receive(:update).with({ "title" => "MyString" })
-        put :update, {:id => attachment.to_param, :attachment => { "title" => "MyString" }}, valid_session
+        Attachment.any_instance.should_receive(:update).with({ "name" => "MyString" })
+        put :update, {:id => attachment.to_param, :attachment => { "name" => "MyString" }}, valid_session
       end
 
       it "assigns the requested attachment as @attachment" do
@@ -128,7 +128,7 @@ describe AttachmentsController do
         attachment = Attachment.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Attachment.any_instance.stub(:save).and_return(false)
-        put :update, {:id => attachment.to_param, :attachment => { "title" => "invalid value" }}, valid_session
+        put :update, {:id => attachment.to_param, :attachment => { "name" => "invalid value" }}, valid_session
         assigns(:attachment).should eq(attachment)
       end
 
@@ -136,7 +136,7 @@ describe AttachmentsController do
         attachment = Attachment.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Attachment.any_instance.stub(:save).and_return(false)
-        put :update, {:id => attachment.to_param, :attachment => { "title" => "invalid value" }}, valid_session
+        put :update, {:id => attachment.to_param, :attachment => { "name" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end

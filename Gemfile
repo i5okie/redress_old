@@ -29,6 +29,9 @@ gem 'chosen-rails'
 gem "haml-rails"
 gem 'jquery-fileupload-rails'
 gem 'tagsinput-rails'
+gem "mediaelement_rails"
+gem "selectize-rails"
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 

@@ -2,18 +2,20 @@
 
 %table
   %tr
-    %th Title
+    %th Name
     %th Description
-    %th Document
+    %th Filetype
+    %th Filelocation
     %th
     %th
     %th
 
   - @attachments.each do |attachment|
     %tr
-      %td= attachment.title
+      %td= attachment.name
       %td= attachment.description
-      %td= attachment.document
+      %td= attachment.filetype
+      %td= attachment.filelocation
       %td= link_to 'Show', attachment
       %td= link_to 'Edit', edit_attachment_path(attachment)
       %td= link_to 'Destroy', attachment, :method => :delete, :data => { :confirm => 'Are you sure?' }

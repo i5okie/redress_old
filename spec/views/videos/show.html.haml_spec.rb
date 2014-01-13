@@ -1,12 +1,11 @@
 require 'spec_helper'
 
-describe "attachments/show" do
+describe "videos/show" do
   before(:each) do
-    @attachment = assign(:attachment, stub_model(Attachment,
+    @video = assign(:video, stub_model(Video,
       :name => "Name",
       :description => "Description",
-      :filetype => "Filetype",
-      :filelocation => "Filelocation"
+      :vidlink => "Vidlink"
     ))
   end
 
@@ -15,7 +14,6 @@ describe "attachments/show" do
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Name/)
     rendered.should match(/Description/)
-    rendered.should match(/Filetype/)
-    rendered.should match(/Filelocation/)
+    rendered.should match(/Vidlink/)
   end
 end

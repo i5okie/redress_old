@@ -1,14 +1,17 @@
 %p#notice= notice
 
 %p
-  %b Title:
-  = @attachment.title
+  %b Name:
+  = @attachment.name
 %p
   %b Description:
   = @attachment.description
 %p
-  %b Document:
-  = @attachment.document
+  %b Filetype:
+  = @attachment.filetype
+%p
+  %b Filelocation:
+  = @attachment.filelocation
 
 = link_to 'Edit', edit_attachment_path(@attachment)
 \|

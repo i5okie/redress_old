@@ -1,7 +1,5 @@
 class AttachmentsController < ApplicationController
   before_action :set_attachment, only: [:show, :edit, :update, :destroy]
-  before_action :update_attachment_attributes, only: [:edit, :create, :update]
-  
 
   # GET /attachments
   # GET /attachments.json
@@ -64,14 +62,6 @@ class AttachmentsController < ApplicationController
   end
 
   private
-  
-    def update_attachment_attributes
-      if attachment.present? && attachment_changed?
-        self.content_type = attachment.file.content_type
-        self.file_size = attachment.file.size
-      end
-    end
-
     # Use callbacks to share common setup or constraints between actions.
     def set_attachment
       @attachment = Attachment.find(params[:id])
@@ -79,6 +69,6 @@ class AttachmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attachment_params
-      params.require(:attachment).permit(:title, :description, :document)
+      params.require(:attachment).permit(:name, :description, :filetype, :filelocation)
     end
 end

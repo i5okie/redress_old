@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe "attachments/show" do
+describe "documents/show" do
   before(:each) do
-    @attachment = assign(:attachment, stub_model(Attachment,
+    @document = assign(:document, stub_model(Document,
       :name => "Name",
       :description => "Description",
       :filetype => "Filetype",
