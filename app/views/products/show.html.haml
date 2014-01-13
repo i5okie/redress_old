@@ -16,7 +16,7 @@
       %li
         %a{:href => "#"}= link_to 'Resources', products_path
       %li
-        %a{:href => "#"}= @product.category
+        %a{:href => "#"}= @product.category.name
       %li.active= @product.name
   .row
     .col-lg-12

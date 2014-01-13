@@ -9,9 +9,9 @@
 
     / Nav tabs
     %dl.tabs.vertical{"data-tab" => "true"}
-      %dd
-        %a{:href => "#panel1a"} COMPUTERS
       %dd.active
+        %a{:href => "#panel1a"} COMPUTERS
+      %dd
         %a{:href => "#panel2a"} SERVERS
       %dd
         %a{:href => "#panel3a"} PRINTERS
@@ -20,63 +20,28 @@
       %dd
         %a{:href => "#panel5a"} OTHER
     .tabs-content.vertical
-      #panel1a.content
-        %ul
-          %li
-            %img{:src => "http://placehold.it/122x120&text=Desktop"}
-          %li
-            %img{:src => "http://placehold.it/122x120&text=ThinClient"}
-          %li
-            %img{:src => "http://placehold.it/122x120&text=Laptop"}
-          %li
-            %img{:src => "http://placehold.it/122x120&text=A-I-O"}
-      #panel2a.content.active
-        %ul
-          %li
-            - @servers.each do |product|
+      #panel1a.content.active
+        %ul.inline-list
+          - @computers.each do |product|
+            %li
+              = link_to product.name, product, :class=>"button small radius"
+      #panel2a.content
+        %ul.inline-list
+          - @servers.each do |product|
+            %li
               = link_to product.name, product, :class=>"button small radius"
       #panel3a.content
-        %ul
-          %li
-            %img{:src => "http://placehold.it/122x120&text=Mobile"}
-          %li
-            %img{:src => "http://placehold.it/122x120&text=Other"}
+        %ul.inline-list
+          - @printers.each do |product|
+            %li
+              = link_to product.name, product, :class=>"button small radius"
       #panel4a.content
-        %ul
-          %li
-            %img{:src => "http://placehold.it/122x120&text=BarcodeSCanner"}
-          %li
-            %img{:src => "http://placehold.it/122x120&text=Data Collector"}
-          %li
-            %img{:src => "http://placehold.it/122x120&text=Other"}
+        %ul.inline-list
+          - @pos.each do |product|
+            %li
+              = link_to product.name, product, :class=>"button small radius"
       #panel5a.content
-        %ul
-          %li
-            %img{:src => "http://placehold.it/122x120&text=Other"}
-          %li
-            %img{:src => "http://placehold.it/122x120&text=Other"}
-          %li
-            %img{:src => "http://placehold.it/122x120&text=Other"}
-            
-
-
-
-%ul.nav.nav-pills.nav-stacked
-  %li
-    %a{"data-toggle" => "tab", :href => "#comp"} COMPUTERS
-  %li
-    %a{"data-toggle" => "tab", :href => "#serv", :class => "active"} SERVERS
-  %li
-    %a{"data-toggle" => "tab", :href => "#print"} PRINTERS
-  %li
-    %a{"data-toggle" => "tab", :href => "#pos"} POINT OF SALE
-  %li
-    %a{"data-toggle" => "tab", :href => "#other"} OTHER
-/ Tab panes
-.col-lg-9
-  .tab-content
-    #comp.tab-pane.fade ...home tabbbbbb
-    #serv.tab-pane.active ..dfojnfdon
-    #print.tab-pane.fade ...aaaahdhhdfd
-    #pos.tab-pane.fade ...coooll
-    #other.tab-pane.fade ...coooll
+        %ul.inline-list
+          - @other.each do |product|
+            %li
+              = link_to product.name, product, :class=>"button small radius"

@@ -3,7 +3,11 @@ class HomeController < ApplicationController
 
   def index
   	@products = Product.all
-    @servers = Category.where(name: Servers).products
+    @servers = Category.where(name: 'Servers').first.products
+    @computers = Category.where(name: 'Computers').first.products
+    @printers = Category.where(name: 'Printers').first.products
+    @pos = Category.where(name: 'Point-of-Sale').first.products
+    @other = Category.where(name: 'Other').first.products
 
   end
 
