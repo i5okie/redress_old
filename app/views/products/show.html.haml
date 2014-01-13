@@ -1,24 +1,23 @@
 .container
   .row
-
-    %p
-      .jumbotron.moon
-        .row
-          .col-lg-8
-            .h1
-              .h2.text-muted= @product.manufacturer
-              = @product.name
-            %p
-              .lead= @product.description
-          .col-lg-4
-            %p
-              = image_tag @product.image_url(:thumb).to_s, :class=>"img-rounded"
-      %ol.breadcrumb
-        %li
-          %a{:href => "#"}= link_to 'Resources', products_path
-        %li
-          %a{:href => "#"}= @product.category
-        %li.active= @product.name
+    .heading.moon
+      .large-6.columns
+        .h2
+          = @product.manufacturer
+        .h1
+          = @product.name
+        %p
+          .lead= @product.description
+      .large-4.columns
+        .right
+          = image_tag @product.image_url(:thumb).to_s, :class=>"img-rounded"
+  .row
+    %ol.breadcrumbs
+      %li
+        %a{:href => "#"}= link_to 'Resources', products_path
+      %li
+        %a{:href => "#"}= @product.category
+      %li.active= @product.name
   .row
     .col-lg-12
       .panel.panel-default
@@ -32,9 +31,9 @@
         %table.table.table-striped.table-hover
           %thead
             %tr
-              %th
+              %th{width: 850}
                 Filename
-              %th
+              %th{width: 100}
                 Download
           %tr
             %td

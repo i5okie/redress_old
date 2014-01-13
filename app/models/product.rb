@@ -3,13 +3,13 @@ class Product
   include Mongoid::TagsArentHard
   mount_uploader :image, ImageUploader
   embeds_many :attachments
+  belongs_to :category
 
   field :name
   field :manufacturer
   field :model
   field :description
   field :link
-  field :category
   field :image
 
   taggable_with :tags, separator: ","

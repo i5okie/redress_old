@@ -24,7 +24,7 @@
       = f.input :remote_image_url, :label => false
 
   .col-xs-4.col-md-4
-    = f.input :category, input_html: { class: 'form-control' }
+    = f.collection_select :category, Category.all, :id, :name, input_html: { class: 'form-control' }
 
   .col-xs-6.col-md-6
     = f.input :link, input_html: { class: 'form-control' }

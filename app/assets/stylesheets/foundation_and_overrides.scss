@@ -3,7 +3,7 @@
 //
 
 // Uncomment to use rem-calc() in your settings
-// @import "foundation/functions";
+@import "foundation/functions";
 
 // $experimental: true;
 
@@ -13,36 +13,36 @@
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
-// $base-font-size: 100%;
+ $base-font-size: 100%;
 
 // The $base-line-height is 100% while $base-font-size is 150%
-// $base-line-height: 150%;
+ $base-line-height: 150%;
 
 // This is the default html and body font-size for the base rem value.
-// $rem-base: 16px;
+ $rem-base: 16px;
 
 // We use this to control whether or not CSS classes come through in the gem files.
-// $include-html-classes: true;
-// $include-print-styles: true;
-// $include-html-global-classes: $include-html-classes;
+ $include-html-classes: true;
+ $include-print-styles: true;
+ $include-html-global-classes: $include-html-classes;
 
 // Grid
 
-// $include-html-grid-classes: $include-html-classes;
+ $include-html-grid-classes: $include-html-classes;
 
-// $row-width: rem-calc(1000);
-// $column-gutter: rem-calc(30);
-// $total-columns: 12;
+ $row-width: rem-calc(1000);
+ $column-gutter: rem-calc(30);
+ $total-columns: 12;
 
 // We use these to control various global styles
-// $body-bg: #fff;
-// $body-font-color: #222;
-$body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $body-font-weight: normal;
-// $body-font-style: normal;
+ $body-bg: #fff;
+ $body-font-color: #222;
+ $body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+ $body-font-weight: normal;
+ $body-font-style: normal;
 
 // We use this to control font-smoothing
-// $font-smoothing: antialiased;
+ $font-smoothing: antialiased;
 
 // We use these to control text direction settings
 // $text-direction: ltr;
@@ -50,19 +50,19 @@ $body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial,
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
+ $primary-color: #008CBA;
+ $secondary-color: #e7e7e7;
+ $alert-color: #f04124;
+ $success-color: #43AC6A;
 
 // We use these to make sure border radius matches unless we want it different.
-// $global-radius: 3px;
-// $global-rounded: 1000px;
+ $global-radius: 3px;
+ $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
-// $shiny-edge-size: 0 1px 0;
-// $shiny-edge-color: rgba(#fff, .5);
-// $shiny-edge-active-color: rgba(#000, .2);
+ $shiny-edge-size: 0 1px 0;
+ $shiny-edge-color: rgba(#fff, .5);
+ $shiny-edge-active-color: rgba(#000, .2);
 
 // Media Query Ranges
 // $small-range: (0em, 40em);
@@ -194,6 +194,44 @@ $body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial,
 // We use these to control the slash between breadcrumbs
 // $crumb-slash-color: #aaa;
 // $crumb-slash: "/";
+
+// Button
+  $include-html-button-classes: $include-html-classes;
+
+// We use these to build padding for buttons.
+$button-med: rem-calc(12);
+$button-tny: rem-calc(7);
+$button-sml: rem-calc(9);
+$button-lrg: rem-calc(16);
+
+// We use this to control the display property.
+$button-display: inline-block;
+$button-margin-bottom: rem-calc(20);
+
+// We use these to control button text styles.
+$button-font-family: inherit;
+$button-font-color: #fff;
+$button-font-color-alt: #333;
+$button-font-med: rem-calc(16);
+$button-font-tny: rem-calc(11);
+$button-font-sml: rem-calc(13);
+$button-font-lrg: rem-calc(20);
+$button-font-weight: bold;
+$button-font-align: center;
+
+// We use these to control various hover effects.
+$button-function-factor: 10%;
+
+// We use these to control button border styles.
+$button-border-width: 1px;
+$button-border-style: solid;
+
+// We use this to set the default radius used throughout the core.
+$button-radius: $global-radius;
+$button-round: $global-rounded;
+
+// We use this to set default opacity for disabled buttons.
+$button-disabled-opacity: 0.6;
 
 // Button Groups
 
@@ -761,6 +799,7 @@ $body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial,
 // $side-nav-divider-style: solid;
 // $side-nav-divider-color: darken(#fff, 10%);
 
+
 // Split Buttons
 
 // $include-html-button-classes: $include-html-classes;
@@ -831,33 +870,34 @@ $body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial,
 
 // Tables
 
-// $include-html-table-classes: $include-html-classes;
+ $include-html-table-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
-// $table-bg: #fff;
-// $table-even-row-bg: #f9f9f9  ;
+ $table-bg: #fff;
+ $table-even-row-bg: #f9f9f9  ;
 
 // These control the table cell border style
-// $table-border-style: solid;
-// $table-border-size: 1px;
-// $table-border-color: #ddd;
+ $table-border-style: none;
+ $table-border-size: 1px;
+ $table-border-color: #ddd;
 
 // These control the table head styles
-// $table-head-bg: #f5f5f5  ;
-// $table-head-font-size: rem-calc(14);
-// $table-head-font-color: #222;
-// $table-head-font-weight: bold;
-// $table-head-padding: rem-calc(8 10 10);
+ $table-head-bg: #f5f5f5  ;
+ $table-head-font-size: rem-calc(14);
+ $table-head-font-color: #222;
+ $table-head-font-weight: bold;
+ $table-head-padding: rem-calc(8 10 10);
 
 // These control the row padding and font styles
-// $table-row-padding: rem-calc(9 10);
-// $table-row-font-size: rem-calc(14);
-// $table-row-font-color: #222;
-// $table-line-height: rem-calc(18);
+ $table-row-padding: rem-calc(0 10);
+ $table-row-font-size: rem-calc(14);
+ $table-row-font-color: #222;
+ $table-line-height: rem-calc(18);
 
 // These are for controlling the display and margin of tables
-// $table-display: table-cell;
-// $table-margin-bottom: rem-calc(20);
+ $table-display: table-cell;
+ $table-margin-bottom: rem-calc(20);
+
 
 //
 // TABS
@@ -990,6 +1030,7 @@ $body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial,
 // Sticky Class
 // $topbar-sticky-class: ".sticky";
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
+
 @import 'foundation';
 
 
@@ -1005,4 +1046,40 @@ a[href^="tel:"]:before {
     content: "\260E";
     
     margin-right: 0.5em;
+}
+
+.classy:hover {
+	background-color: #efe;
+}
+
+.moon {
+	/** To edit this background, follow this link:
+http://svgeneration.com/generate/GPlay?height=8&width=8&background=f0f0f0&overlay=ffffff&weight=15&padding=0.2&
+*/
+	background-color: #f0f0f0;background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHhtbG5zOnhsaW5rPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rJyB3aWR0aD0nNDkxLjk5OTk5OTk5OTk5OTk0JyBoZWlnaHQ9JzI1Mi4wMDAwMDAwMDAwMDAwMycgdmlld0JveD0nMCAwIDk4LjM5OTk5OTk5OTk5OTk5IDUwLjQwMDAwMDAwMDAwMDAwNic+Cgk8ZGVmcz4KCQk8cGF0aCBpZD0ncycgZmlsbD0nI2ZmZmZmZicgZD0nTTAsMGw4IDRsLTgsNHonLz4KCTwvZGVmcz4KCTxnIGlkPSdiJz4KCTx1c2UgeD0nLTgnIHk9Jy00JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzAnIHk9JzAuMicgZmlsbC1vcGFjaXR5PScwLjQ0OTk5OTk5OTk5OTk5OTk2JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTgnIHk9JzQuNCcgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjQ0OTk5OTk5OTk5OTk5OTk2JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMCcgeT0nOC42JyBmaWxsLW9wYWNpdHk9JzAuNDQ5OTk5OTk5OTk5OTk5OTYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctOCcgeT0nMTIuOCcgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScwJyB5PScxNycgZmlsbC1vcGFjaXR5PScwLjMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctOCcgeT0nMjEuMicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSc4LjInIHk9Jy00JyBmaWxsLW9wYWNpdHk9JzAuNDQ5OTk5OTk5OTk5OTk5OTYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctMTYuMicgeT0nMC4yJyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuNicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzguMicgeT0nNC40JyBmaWxsLW9wYWNpdHk9JzAuNDQ5OTk5OTk5OTk5OTk5OTYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctMTYuMicgeT0nOC42JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzguMicgeT0nMTIuOCcgZmlsbC1vcGFjaXR5PScwLjE1JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTE2LjInIHk9JzE3JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzguMicgeT0nMjEuMicgZmlsbC1vcGFjaXR5PScwLjQ0OTk5OTk5OTk5OTk5OTk2JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTI0LjQnIHk9Jy00JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzE2LjQnIHk9JzAuMicgZmlsbC1vcGFjaXR5PScwLjMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctMjQuNCcgeT0nNC40JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuNDQ5OTk5OTk5OTk5OTk5OTYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScxNi40JyB5PSc4LjYnIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTI0LjQnIHk9JzEyLjgnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4xNScgeGxpbms6aHJlZj0nI3MnIC8+CQoJPHVzZSB4PScxNi40JyB5PScxNycgZmlsbC1vcGFjaXR5PScwLjMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctMjQuNCcgeT0nMjEuMicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScyNC41OTk5OTk5OTk5OTk5OTgnIHk9Jy00JyBmaWxsLW9wYWNpdHk9JzAuMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0zMi41OTk5OTk5OTk5OTk5OTQnIHk9JzAuMicgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScyNC41OTk5OTk5OTk5OTk5OTgnIHk9JzQuNCcgZmlsbC1vcGFjaXR5PScwLjE1JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTMyLjU5OTk5OTk5OTk5OTk5NCcgeT0nOC42JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuNDQ5OTk5OTk5OTk5OTk5OTYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScyNC41OTk5OTk5OTk5OTk5OTgnIHk9JzEyLjgnIGZpbGwtb3BhY2l0eT0nMC40NDk5OTk5OTk5OTk5OTk5NicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy0zMi41OTk5OTk5OTk5OTk5OTQnIHk9JzE3JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMTUnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PScyNC41OTk5OTk5OTk5OTk5OTgnIHk9JzIxLjInIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTQwLjgnIHk9Jy00JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuNDQ5OTk5OTk5OTk5OTk5OTYnIHhsaW5rOmhyZWY9JyNzJyAvPgkKCTx1c2UgeD0nMzIuOCcgeT0nMC4yJyBmaWxsLW9wYWNpdHk9JzAuNicgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy00MC44JyB5PSc0LjQnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4xNScgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzMyLjgnIHk9JzguNicgZmlsbC1vcGFjaXR5PScwLjMnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctNDAuOCcgeT0nMTIuOCcgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIDEgMCAwKScgZmlsbC1vcGFjaXR5PScwLjQ0OTk5OTk5OTk5OTk5OTk2JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nMzIuOCcgeT0nMTcnIGZpbGwtb3BhY2l0eT0nMC4xNScgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9Jy00MC44JyB5PScyMS4yJyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuNDQ5OTk5OTk5OTk5OTk5OTYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSc0MScgeT0nLTQnIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTQ4Ljk5OTk5OTk5OTk5OTk5JyB5PScwLjInIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4JCgk8dXNlIHg9JzQxJyB5PSc0LjQnIGZpbGwtb3BhY2l0eT0nMC42JyB4bGluazpocmVmPScjcycgLz4KCTx1c2UgeD0nLTQ4Ljk5OTk5OTk5OTk5OTk5JyB5PSc4LjYnIHRyYW5zZm9ybT0nbWF0cml4KC0xIDAgMCAxIDAgMCknIGZpbGwtb3BhY2l0eT0nMC4zJyB4bGluazpocmVmPScjcycgLz4JCgk8dXNlIHg9JzQxJyB5PScxMi44JyBmaWxsLW9wYWNpdHk9JzAuNDQ5OTk5OTk5OTk5OTk5OTYnIHhsaW5rOmhyZWY9JyNzJyAvPgoJPHVzZSB4PSctNDguOTk5OTk5OTk5OTk5OTknIHk9JzE3JyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyBmaWxsLW9wYWNpdHk9JzAuMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8dXNlIHg9JzQxJyB5PScyMS4yJyBmaWxsLW9wYWNpdHk9JzAuMycgeGxpbms6aHJlZj0nI3MnIC8+Cgk8L2c+Cgk8dXNlIHg9Jy00OC45OTk5OTk5OTk5OTk5OScgeT0nMjUuMjAwMDAwMDAwMDAwMDAzJyB0cmFuc2Zvcm09J21hdHJpeCgtMSAwIDAgMSAwIDApJyB4bGluazpocmVmPScjYicgLz4KCTx1c2UgeD0nLTk4LjE5OTk5OTk5OTk5OTk5JyB5PSctMTYuOCcgdHJhbnNmb3JtPSdtYXRyaXgoLTEgMCAwIC0xIDAgMCknIHhsaW5rOmhyZWY9JyNiJyAvPgoJPHVzZSB4PSc0OS4xOTk5OTk5OTk5OTk5OTYnIHk9Jy0zMy42JyB0cmFuc2Zvcm09J21hdHJpeCgxIDAgMCAtMSAwIDApJyB4bGluazpocmVmPScjYicgLz4KCTx1c2UgeD0nNDkuMTk5OTk5OTk5OTk5OTk2JyB5PSctNTguODAwMDAwMDAwMDAwMDA0JyB0cmFuc2Zvcm09J21hdHJpeCgxIDAgMCAtMSAwIDApJyB4bGluazpocmVmPScjYicgLz4KPC9zdmc+Cg==');
+	padding: 20 20 20 20;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.rnd {
+	border-radius: 6px;
+}
+
+.h1 {
+	font-weight: 800;
+	line-height: 1;
+	font-size: 1.5em;
+}
+
+.h2 {
+	font-weight: 400;
+	line-height: 1;
+	margin-bottom: 5;
+}
+
+.lead {
+	color: #555;
+	font-size: .8em;
+	font-weight: 100;
 }
