@@ -21,7 +21,7 @@ gem 'carrierwave-imagesorcery'
 
 # ADMINISTRATION/MANAGEMENT ##################################################
 # - Use activeadmin
-gem 'activeadmin-mongoid'
+gem 'activeadmin-mongoid', github: 'elia/activeadmin-mongoid', branch: 'rails4'
 
 
 
