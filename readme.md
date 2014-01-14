@@ -31,6 +31,7 @@ warranty/service expiration/renewal notifications to staff and external customer
 Contributions / Pull requests are welcome!!
 
    
+![](https://pbs.twimg.com/media/Bd-DoCNCUAAwbFv.png:large)
    
 
 #### Completed Work
