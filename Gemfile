@@ -19,6 +19,13 @@ gem 'carrierwave-imagesorcery'
 
 
 
+# ADMINISTRATION/MANAGEMENT ##################################################
+# - Use activeadmin
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
+
+
+
 # PRESENTATION ##############################################################
 # - Use zurb foundation framework
 gem 'foundation-rails'
@@ -102,6 +109,7 @@ group :development do
   gem 'rails_layout', github: 'RailsApps/rails_layout'
   gem "better_errors"
   gem "binding_of_caller"
+  gem "meta_request"
 end
 
 group :test do

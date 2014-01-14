@@ -17,4 +17,6 @@ class Product
   taggable_with :tags, separator: ","
   taggable_with :apms, as: :applicables, separator: ","
 
+  accepts_nested_attributes_for :attachments, :allow_destroy => true, :reject_if => lambda { |attachment| attachment[:filelocation].blank? if not attachment[:_destroy] }
+
 end

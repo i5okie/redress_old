@@ -2,6 +2,7 @@
 ### Self-Service Portal Project for manufacturers and resellers
 
 
+
 Redress is a basic userless customer self-service portal.
 A visitor is first met with any marketing information, and contact information
 of how to get phone assistance or remote tech support (optional).
@@ -31,6 +32,7 @@ warranty/service expiration/renewal notifications to staff and external customer
 Contributions / Pull requests are welcome!!
 
    
+![](https://pbs.twimg.com/media/Bd-DoCNCUAAwbFv.png:large)
    
 
 #### Completed Work
@@ -43,20 +45,36 @@ Contributions / Pull requests are welcome!!
 * Add functionality to add/remove/edit static pages for quick guides / tutorials (example: how to configure POS scanner, page lists configuration barcodes to be scanned off screen)
 * Add functionality to add/remove/edit embedded videos for products
 
-   
-
-
-#### Configuration
-   
-
-
+  
 
 #### Requirements
 *   Rails 4.0.2
 *   Ruby 2.0.0-P353
 *   Mongoid from GitHub
-*   
 
-# LICENSE
 
-MIT LICENSE
+
+## Licence
+
+Copyright (c) 2014 Ivan Polchenko
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
