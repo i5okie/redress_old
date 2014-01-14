@@ -1,7 +1,7 @@
 # REDRESS
 ### Self-Service Portal Project for manufacturers and resellers
 
-```no-highlight
+
 Redress is a basic userless customer self-service portal.
 A visitor is first met with any marketing information, and contact information
 of how to get phone assistance or remote tech support (optional).
@@ -29,7 +29,7 @@ warranty/service expiration/renewal notifications to staff and external customer
 
 
 Contributions / Pull requests are welcome!!
-```
+
    
    
 
