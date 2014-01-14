@@ -3,6 +3,8 @@ class Product
   include Mongoid::TagsArentHard
   mount_uploader :image, ImageUploader
   has_many :attachments
+  has_many :documents
+  has_many :videos
   belongs_to :category
 
   field :name

@@ -100,6 +100,8 @@ group :development do
   gem "rspec-rails"
   gem "guard-rspec"
   gem 'rails_layout', github: 'RailsApps/rails_layout'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :test do
