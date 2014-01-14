@@ -21,8 +21,7 @@ gem 'carrierwave-imagesorcery'
 
 # ADMINISTRATION/MANAGEMENT ##################################################
 # - Use activeadmin
-gem 'activeadmin'
-gem "meta_search",    '>= 1.1.0.pre'
+gem 'activeadmin-mongoid'
 
 
 
