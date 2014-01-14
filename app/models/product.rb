@@ -2,8 +2,8 @@ class Product
   include Mongoid::Document
   include Mongoid::TagsArentHard
   mount_uploader :image, ImageUploader
-  has_many :attachments
-  has_many :documents
+  embeds_many :attachments, as: :archive
+  embeds_many :documents, as: :guides
   has_many :videos
   belongs_to :category
 
