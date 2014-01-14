@@ -4,7 +4,7 @@ class Product
   mount_uploader :image, ImageUploader
   embeds_many :attachments, as: :archive
   embeds_many :documents, as: :guides
-  has_many :videos
+  embeds_many :videos, as: :vidz
   belongs_to :category
 
   field :name
