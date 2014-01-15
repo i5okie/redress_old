@@ -1,3 +1,3 @@
 # Be sure to restart your server when you modify this file.
 
-RedressPg::Application.config.session_store :cookie_store, key: '_redress-pg_session'
+Redress::Application.config.session_store :cookie_store, key: '_redress-pg_session'

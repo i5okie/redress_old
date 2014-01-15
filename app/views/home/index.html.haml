@@ -1,0 +1,47 @@
+.container
+  = render 'layouts/slides'
+  = render 'layouts/contacts'
+  .row
+    .large-12.columns
+      %h2 SUPPORT RESOURCES
+      .grid
+        %p Learn how to install and configure your devices / download documentation and drivers.
+
+    / Nav tabs
+    %dl.tabs.vertical{"data-tab" => "true"}
+      %dd.active
+        %a{:href => "#panel1a"} COMPUTERS
+      %dd
+        %a{:href => "#panel2a"} SERVERS
+      %dd
+        %a{:href => "#panel3a"} PRINTERS
+      %dd
+        %a{:href => "#panel4a"} POINT OF SALE
+      %dd
+        %a{:href => "#panel5a"} OTHER
+    .tabs-content.vertical
+      #panel1a.content.active
+        %ul.inline-list
+          - @computers.each do |product|
+            %li
+              = link_to product.name, product, :class=>"button small radius"
+      #panel2a.content
+        %ul.inline-list
+          - @servers.each do |product|
+            %li
+              = link_to product.name, product, :class=>"button small radius"
+      #panel3a.content
+        %ul.inline-list
+          - @printers.each do |product|
+            %li
+              = link_to product.name, product, :class=>"button small radius"
+      #panel4a.content
+        %ul.inline-list
+          - @pos.each do |product|
+            %li
+              = link_to product.name, product, :class=>"button small radius"
+      #panel5a.content
+        %ul.inline-list
+          - @other.each do |product|
+            %li
+              = link_to product.name, product, :class=>"button small radius"

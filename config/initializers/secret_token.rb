@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-RedressPg::Application.config.secret_key_base = '3b046d9f719f3431d0e56619101322894c8445f5bde018f0d3ec16ad0fbc323374cf19f90544eed486ca68b86497c281ff7b26913cf48326908fbd5da150e6c5'
+Redress::Application.config.secret_key_base = '3b046d9f719f3431d0e56619101322894c8445f5bde018f0d3ec16ad0fbc323374cf19f90544eed486ca68b86497c281ff7b26913cf48326908fbd5da150e6c5'
