@@ -6,35 +6,26 @@ gem 'rails', '4.0.2'
 
 
 # STORAGE ###################################################################
-# - Use mongoid instead of Active Record
-gem 'mongoid', git: "https://github.com/mongoid/mongoid"
-gem 'bson_ext'
-gem 'mongoid-grid_fs', github: 'ahoward/mongoid-grid_fs'
-gem 'mongoid-tags-arent-hard'
+gem 'pg'
 
-# - Use Carrierwave-mongoid for uploading files
-gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
+# - Use Carrierwave for uploading files
+#gem 'carrierwave'
 # - Use Carrierwave with imagesorcery for image manipulation
-gem 'carrierwave-imagesorcery'
+#gem 'carrierwave-imagesorcery'
 
 
 
 # ADMINISTRATION/MANAGEMENT ##################################################
 # - Use activeadmin
-gem 'activeadmin-mongoid', github: 'elia/activeadmin-mongoid', branch: 'rails4'
-
 
 
 # PRESENTATION ##############################################################
 # - Use zurb foundation framework
 gem 'foundation-rails'
 gem 'font-awesome-sass'
-gem 'bootstrap-tagsinput-rails'
 gem "bourbon"
-gem 'chosen-rails'
 gem "haml-rails"
 gem 'jquery-fileupload-rails'
-gem 'tagsinput-rails'
 gem "mediaelement_rails"
 gem "selectize-rails"
 
@@ -75,7 +66,7 @@ gem "cancan"
 
 # DEPLOYMENT ################################################################
 # - Use unicorn as the app server
-gem 'unicorn'
+# gem 'unicorn'
 
 # - Use Capistrano for deployment
 #gem 'capistrano', '~> 3.0', require: false, group: :development
@@ -93,9 +84,9 @@ gem "analytics-ruby"
 
 
 # ETC #######################################################################
-group :assets do
-	gem 'compass-rails'
-end
+#group :assets do
+#	gem 'compass-rails'
+#end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -104,7 +95,7 @@ end
 
 group :development do
   gem "rspec-rails"
-  gem "guard-rspec"
+#  gem "guard-rspec"
   gem 'rails_layout', github: 'RailsApps/rails_layout'
   gem "better_errors"
   gem "binding_of_caller"

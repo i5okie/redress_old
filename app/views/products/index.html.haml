@@ -1,34 +1,29 @@
-.row
-  .large-12.columns
-    .panel
-      %i.fa.fa-list.fa-1x PRODUCTS
-      %a.pull-right{:href => new_product_path}
-        %i.fa.fa-plus.fa-1x 
-    %table.tude
-      %thead
-        %tr
-          %th{width: 400} Name
-          %th{width: 150} Manufacturer
-          %th{width: 200} Model
-          %th{width: 225}
-      %tbody
-        - @products.each do |product|
-          %tr.classy
-            %td= product.name
-            %td= product.manufacturer
-            %td= product.model
-            %td
-              .button-group.radius.pull-right
-                %a.button.secondary.tiny{:href => product_path(product)}
-                  %i.fa.fa-info.fa-fw.fa-2x
-                  
-                %a.button.secondary.tiny{:href => edit_product_path(product)}
-                  %i.fa.fa-pencil.fa-fw.fa-2x
-                  
-                %a.button.alert.tiny{:href => product, method: :delete, data: { confirm: 'Are you sure?' }}
-                  %i.fa.fa-trash-o.fa-fw.fa-2x
+%h1 Listing products
 
-                
-    %br
+%table
+  %tr
+    %th Name
+    %th Description
+    %th Model
+    %th Manufacturer
+    %th Link
+    %th Category
+    %th
+    %th
+    %th
 
+  - @products.each do |product|
+    %tr
+      %td= product.name
+      %td= product.description
+      %td= product.model
+      %td= product.manufacturer
+      %td= product.link
+      %td= product.category
+      %td= link_to 'Show', product
+      %td= link_to 'Edit', edit_product_path(product)
+      %td= link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
+%br
+
+= link_to 'New Product', new_product_path

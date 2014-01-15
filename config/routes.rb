@@ -1,18 +1,17 @@
-Redress::Application.routes.draw do
-  resources :videos
-
+RedressPg::Application.routes.draw do
   resources :documents
 
   resources :attachments
+
   resources :categories
+
   resources :products
 
-  get "home/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

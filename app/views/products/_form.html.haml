@@ -1,84 +1,28 @@
-= simple_form_for(@product) do |f|
+= form_for @product do |f|
   - if @product.errors.any?
     #error_explanation
-      %h2
-        = pluralize(@product.errors.count, "error")
-        prohibited this product from being saved:
+      %h2= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
       %ul
         - @product.errors.full_messages.each do |msg|
           %li= msg
 
-  .row
-    .large-12.columns
-      = f.input :name, input_html: { class: 'form-control' }
-  .row
-    .large-6.columns
-      = f.input :manufacturer, input_html: { class: 'form-control' }
-    .large-6.columns
-      = f.input :model, input_html: { class: 'form-control' }
-  .row
-    .large-6.columns
-      = f.label :image
-      = f.file_field :image, input_html: { class: 'form-control'}
-    .large-6.columns
-      = f.input :remote_image_url
-
-  .row
-    .large-6.columns
-      = f.input :description, input_html: { class: 'form-control' }
-    .large-6.columns
-      = f.input :category do
-        = f.select :category, Category.all.map { |c| [c.name, c.id]}, include_blank: true, :selected => @product.category.id
-
-  .row
-    .large-12.columns
-      = f.input :link, input_html: { class: 'form-control' }
-  
-  .row
-    .large-12.columns
-      = f.input :tags, input_html: { class: 'chosen-select', id: 'tags'}
-  .row
-    .large-12.columns
-      = f.input :apms, label: 'Applicable Models', input_html: { class: 'form-control', id: 'apms' }
-  .row
-    .large-12.columns
-      .blah
-        Attachments
-      %table
-        %tr
-          %th Name
-          %th Description
-          %th Filetype
-          %th Filelocation
-          %th
-          %th
-          %th
-
-        - @attachments.each do |attachment|
-          %tr
-            %td= attachment.name
-            %td= attachment.description
-            %td= attachment.filetype
-            %td= attachment.filelocation
-            %td= link_to 'Show', attachment
-            %td= link_to 'Edit', edit_attachment_path(attachment)
-            %td= link_to 'Destroy', attachment, :method => :delete, :data => { :confirm => 'Are you sure?' }
-    .row
-      .large-12.columns
-        = f.simple_fields_for :attachments do |a|
-          .row
-            .large-6.columns
-              = a.input :name
-            .large-6.columns
-              = a.input :description
-          .row
-            .large-6.columns
-              = a.input :filetype
-            .large-6.columns
-              = a.file_field :filelocation
-          .row
-            .large-12.columns
-              = a.button :submit
-  .row
-    .large-12.columns
-    = f.button :submit, :class => "button secondary"
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :model
+    = f.text_field :model
+  .field
+    = f.label :manufacturer
+    = f.text_field :manufacturer
+  .field
+    = f.label :link
+    = f.text_field :link
+  .field
+    = f.label :category
+    = f.text_field :category
+  .actions
+    = f.submit 'Save'

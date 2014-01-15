@@ -1,81 +1,24 @@
-.container
-  .row
-    .heading.moon
-      .large-6.columns
-        .h2
-          = @product.manufacturer
-        .h1
-          = @product.name
-        %p
-          .lead= @product.description
-      .large-4.columns
-        .right
-          = image_tag @product.image_url(:thumb).to_s, :class=>"img-rounded"
-  .row
-    %ol.breadcrumbs
-      %li
-        %a{:href => "#"}= link_to 'Support Resources', root_path
-      %li
-        %a{:href => "#"}= @product.category.name
-      %li.active= @product.manufacturer + ' ' + @product.name
-  .row
-    .large-12.columns
-      %h3 Available Resources
-      .panel
-        %p
-          Applies to following models:
-          - @product.apms.each do |tg|
-            %span.label.label-default= tg
-      / Nav tabs
-      %dl.tabs{"data-tab" => "true"}
-        %dd.active
-          %a{:href => "#documents"} DOCUMENTS
-        %dd
-          %a{:href => "#drivers"} DRIVERS
-        %dd
-          %a{:href => "#videos"} VIDEOS
-      .tabs-content
-        #documents.content.active
-          = @documents.each do |a|
-            .doc
-              Document:
-              a.name
-              a.filelocation
-          %table.table.table-striped.table-hover
-            %thead
-              %tr
-                %th{width: 850}
-                  Filename
-                %th{width: 100}
-                  Download
-            %tr
-              %td
-                file
-              %td
-                %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
-                  %i.fa.fa-download.fa-fw
-                  %strong
-                    PDF
-        #drivers.content
-          %table.table.table-striped.table-hover
-            %thead
-              %tr
-                %th{width: 850}
-                  Filename
-                %th{width: 100}
-                  Download
-            %tr
-              = @attachments.each do |a|
-                .doc
-                  Attachment:
-                %td
-                  a.name
-                %td
-                  %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
-                    %i.fa.fa-download.fa-fw
-                    %strong
-                      %a{href: "<%= a.filelocation %>" 
-                        =a.filetype.capitalize
-        #videos.content
-          %a.button.small.radius.disabled
-            No Videos :(
+%p#notice= notice
+
+%p
+  %b Name:
+  = @product.name
+%p
+  %b Description:
+  = @product.description
+%p
+  %b Model:
+  = @product.model
+%p
+  %b Manufacturer:
+  = @product.manufacturer
+%p
+  %b Link:
+  = @product.link
+%p
+  %b Category:
+  = @product.category
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path
