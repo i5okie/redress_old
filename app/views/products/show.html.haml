@@ -1,5 +1,13 @@
 .container
   .row
+    .large-12.columns
+      %ol.breadcrumbs
+        %li
+          %a{:href => "#"}= link_to 'Support Resources', root_path
+        %li
+          %a{:href => "#"}= @product.category.name
+        %li.active= @product.manufacturer + ' ' + @product.name
+  .row
     .heading.moon
       .large-6.columns
         .h2
@@ -11,13 +19,6 @@
       .large-4.columns
         .right
           = image_tag @product.image_url(:thumb).to_s, :class=>"img-rounded"
-  .row
-    %ol.breadcrumbs
-      %li
-        %a{:href => "#"}= link_to 'Support Resources', root_path
-      %li
-        %a{:href => "#"}= @product.category.name
-      %li.active= @product.manufacturer + ' ' + @product.name
   .row
     .large-12.columns
       %h3 Available Resources
@@ -36,11 +37,6 @@
           %a{:href => "#videos"} VIDEOS
       .tabs-content
         #documents.content.active
-          = @documents.each do |a|
-            .doc
-              Document:
-              a.name
-              a.filelocation
           %table.table.table-striped.table-hover
             %thead
               %tr
@@ -65,17 +61,13 @@
                 %th{width: 100}
                   Download
             %tr
-              = @attachments.each do |a|
-                .doc
-                  Attachment:
-                %td
-                  a.name
-                %td
-                  %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
-                    %i.fa.fa-download.fa-fw
-                    %strong
-                      %a{href: "<%= a.filelocation %>" 
-                        =a.filetype.capitalize
+              %td
+                Filename
+              %td
+                %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
+                  %i.fa.fa-download.fa-fw
+                  %strong
+                    ZIP
         #videos.content
           %a.button.small.radius.disabled
             No Videos :(

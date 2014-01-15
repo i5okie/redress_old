@@ -1,5 +1,3 @@
-class Category
-  include Mongoid::Document
-  field :name
-  has_many :products
+class Category < ActiveRecord::Base
+	has_many :products
 end

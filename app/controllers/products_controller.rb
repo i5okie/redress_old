@@ -10,17 +10,11 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @attachments = Attachment.all
-    @documents = Document.all
   end
 
   # GET /products/new
   def new
     @product = Product.new
-    @attachments = Attachment.all
-    @documents = Document.all
-    @attachment = Attachment.new
-    @document = Document.new
   end
 
   # GET /products/1/edit
@@ -31,7 +25,6 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
-    @attachment = Attachment.new(attachment_params)
 
     respond_to do |format|
       if @product.save
@@ -42,7 +35,6 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
-
   end
 
   # PATCH/PUT /products/1
@@ -51,7 +43,7 @@ class ProductsController < ApplicationController
     respond_to do |format|
       if @product.update(product_params)
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { render action: 'show', status: :ok, location: @product }
+        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -77,6 +69,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :manufacturer, :model, :category, :description, :link, :image, :remote_image_url, :tags, :apms, :attachments, :documents, :archives, :guides)
+      params.require(:product).permit(:name, :description, :model, :manufacturer, :link, :image, :remote_image_url, :tags, :apms, :tag_list, :apm_list, :category_id)
     end
 end
