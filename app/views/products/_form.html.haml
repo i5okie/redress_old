@@ -54,15 +54,6 @@
           %th
           %th
 
-        - @attachments.each do |attachment|
-          %tr
-            %td= attachment.name
-            %td= attachment.description
-            %td= attachment.filetype
-            %td= attachment.filelocation
-            %td= link_to 'Show', attachment
-            %td= link_to 'Edit', edit_attachment_path(attachment)
-            %td= link_to 'Destroy', attachment, :method => :delete, :data => { :confirm => 'Are you sure?' }
     .row
       .large-12.columns
         = f.simple_fields_for :attachments do |a|
