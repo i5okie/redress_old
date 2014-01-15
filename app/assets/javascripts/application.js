@@ -14,10 +14,21 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require selectize
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
-$('.tagz').selectize({
+$('#input-tags').selectize({
+    delimiter: ',',
+    persist: false,
+    create: function(input) {
+        return {
+            value: input,
+            text: input
+        }
+    }
+});
+$('#input-tags2').selectize({
     delimiter: ',',
     persist: false,
     create: function(input) {

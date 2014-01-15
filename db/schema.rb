@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140115195321) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image"
-    t.string   "category_id"
+    t.integer  "category_id"
   end
 
   create_table "taggings", force: true do |t|

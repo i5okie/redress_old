@@ -16,7 +16,7 @@
       %li
         %a{:href => "#"}= link_to 'Support Resources', root_path
       %li
-        %a{:href => "#"}= @product.category.name
+        %a{:href => "#"}= @product.category_id
       %li.active= @product.manufacturer + ' ' + @product.name
   .row
     .large-12.columns
@@ -74,7 +74,7 @@
                   %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
                     %i.fa.fa-download.fa-fw
                     %strong
-                      %a{href: "<%= a.filelocation %>" 
+                      %a{href: "<%= a.filelocation %>"} 
                         =a.filetype.capitalize
         #videos.content
           %a.button.small.radius.disabled
