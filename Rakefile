@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RedressPg::Application.load_tasks
+Redress::Application.load_tasks
