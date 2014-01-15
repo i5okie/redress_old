@@ -17,3 +17,13 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+$('.tagz').selectize({
+    delimiter: ',',
+    persist: false,
+    create: function(input) {
+        return {
+            value: input,
+            text: input
+        }
+    }
+});

@@ -36,23 +36,10 @@
   
   .row
     .large-12.columns
-      = f.input :tags, input_html: { class: 'chosen-select', id: 'tags'}
+      = f.input :tags, input_html: { class: 'tagz', id: 'input-tags'}
   .row
     .large-12.columns
-      = f.input :apms, label: 'Applicable Models', input_html: { class: 'form-control', id: 'apms' }
-  .row
-    .large-12.columns
-      .blah
-        Attachments
-      %table
-        %tr
-          %th Name
-          %th Description
-          %th Filetype
-          %th Filelocation
-          %th
-          %th
-          %th
+      = f.input :apms, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags' }
   .row
     .large-12.columns
     = f.button :submit, :class => "button secondary"
