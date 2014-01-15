@@ -12,7 +12,7 @@ gem 'pg'
 gem 'carrierwave'
 # - Use Carrierwave with imagesorcery for image manipulation
 gem 'carrierwave-imagesorcery'
-
+gem 'acts-as-taggable-on', github: "mbleigh/acts-as-taggable-on"
 
 
 # ADMINISTRATION/MANAGEMENT ##################################################

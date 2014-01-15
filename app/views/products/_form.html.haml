@@ -28,7 +28,7 @@
       = f.input :description, input_html: { class: 'form-control' }
     .large-6.columns
       = f.input :category do
-        = f.select :category, Category.all.map { |c| [c.name, c.id]}, include_blank: true, :selected => @product.category.id
+        = f.select :category, Category.all.map { |c| [c.name, c.id]}, include_blank: true
 
   .row
     .large-12.columns

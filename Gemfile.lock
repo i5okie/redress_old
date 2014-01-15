@@ -5,6 +5,15 @@ GIT
     rails_layout (1.0.3)
 
 GIT
+  remote: git://github.com/mbleigh/acts-as-taggable-on.git
+  revision: a33622edcc809d35c89ca3db1f72d5220d450ba2
+  specs:
+    acts-as-taggable-on (3.0.1)
+      actionpack (>= 3, < 5)
+      activerecord (>= 3, < 5)
+      activesupport (>= 3, < 5)
+
+GIT
   remote: https://github.com/plataformatec/simple_form
   revision: ea5ceb7dfa613f432efbfa04195c86599a16d973
   specs:
@@ -222,6 +231,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   analytics-ruby
   bcrypt-ruby
   better_errors
