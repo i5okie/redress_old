@@ -50,7 +50,7 @@ Contributions / Pull requests are welcome!!
 #### Requirements
 *   Rails 4.0.2
 *   Ruby 2.0.0-P353
-*   Mongoid from GitHub
+*   PostgreSQL
 
 
 
