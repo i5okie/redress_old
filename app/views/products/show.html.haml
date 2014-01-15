@@ -1,5 +1,13 @@
 .container
   .row
+    .large-12.columns
+      %ol.breadcrumbs
+        %li
+          %a{:href => "#"}= link_to 'Support Resources', root_path
+        %li
+          %a{:href => "#"}= @product.category.name
+        %li.active= @product.manufacturer + ' ' + @product.name
+  .row
     .heading.moon
       .large-6.columns
         .h2
@@ -11,13 +19,6 @@
       .large-4.columns
         .right
           = image_tag @product.image_url(:thumb).to_s, :class=>"img-rounded"
-  .row
-    %ol.breadcrumbs
-      %li
-        %a{:href => "#"}= link_to 'Support Resources', root_path
-      %li
-        %a{:href => "#"}= @product.category.name
-      %li.active= @product.manufacturer + ' ' + @product.name
   .row
     .large-12.columns
       %h3 Available Resources
