@@ -16,7 +16,7 @@
       %li
         %a{:href => "#"}= link_to 'Support Resources', root_path
       %li
-        %a{:href => "#"}= @product.category_id
+        %a{:href => "#"}= @product.category.name
       %li.active= @product.manufacturer + ' ' + @product.name
   .row
     .large-12.columns
