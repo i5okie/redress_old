@@ -19,7 +19,7 @@
   .row
     .large-6.columns
       = f.label :image
-      = f.file_field :image, input_html: { class: 'form-control'}
+      = f.input :image, as: :file, input_html: { class: 'form-control'}
     .large-6.columns
       = f.input :remote_image_url
 
