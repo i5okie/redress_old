@@ -36,11 +36,6 @@
           %a{:href => "#videos"} VIDEOS
       .tabs-content
         #documents.content.active
-          = @documents.each do |a|
-            .doc
-              Document:
-              a.name
-              a.filelocation
           %table.table.table-striped.table-hover
             %thead
               %tr
@@ -65,17 +60,13 @@
                 %th{width: 100}
                   Download
             %tr
-              = @attachments.each do |a|
-                .doc
-                  Attachment:
-                %td
-                  a.name
-                %td
-                  %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
-                    %i.fa.fa-download.fa-fw
-                    %strong
-                      %a{href: "<%= a.filelocation %>"} 
-                        =a.filetype.capitalize
+              %td
+                Filename
+              %td
+                %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
+                  %i.fa.fa-download.fa-fw
+                  %strong
+                    ZIP
         #videos.content
           %a.button.small.radius.disabled
             No Videos :(
