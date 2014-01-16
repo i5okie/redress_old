@@ -22,11 +22,12 @@
   .row
     .large-12.columns
       %h3 Available Resources
-      .panel
-        %p
-          Applies to following models:
-          - @product.apms.each do |tg|
-            %span.label.label-default= tg
+      - if @product.apms.present?
+        .panel
+          %p
+            Applies to following models:
+            - @product.apms.each do |tg|
+              %span.label.label-default= tg
       / Nav tabs
       %dl.tabs{"data-tab" => "true"}
         %dd.active
