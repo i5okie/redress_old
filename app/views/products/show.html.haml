@@ -44,14 +44,16 @@
                   Filename
                 %th{width: 100}
                   Download
-            %tr
-              %td
-                file
-              %td
-                %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
-                  %i.fa.fa-download.fa-fw
-                  %strong
-                    PDF
+            %tbody
+              = @products.pdocuments.each do |pd|
+                %tr
+                  %td
+                    = link_to pd.name, pd.filelocation
+                  %td
+                    %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
+                      %i.fa.fa-download.fa-fw
+                      %strong
+                        pd.filetype
         #drivers.content
           %table.table.table-striped.table-hover
             %thead

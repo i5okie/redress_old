@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116001216) do
+ActiveRecord::Schema.define(version: 20140116180542) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attacheds", force: true do |t|
+    t.string   "product_id"
+    t.string   "attachment_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "attachments", force: true do |t|
     t.string   "name"
@@ -31,25 +38,18 @@ ActiveRecord::Schema.define(version: 20140116001216) do
     t.datetime "updated_at"
   end
 
+  create_table "documenteds", force: true do |t|
+    t.string   "product_id"
+    t.string   "document_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "documents", force: true do |t|
     t.string   "name"
     t.text     "description"
     t.string   "filetype"
     t.string   "filelocation"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "pattachments", force: true do |t|
-    t.integer  "product_id"
-    t.integer  "attachment_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "pdocuments", force: true do |t|
-    t.integer  "product_id"
-    t.integer  "document_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
