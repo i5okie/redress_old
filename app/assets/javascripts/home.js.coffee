@@ -6,7 +6,6 @@ jQuery ($) ->
   $('dl.tabs dd').on('click', setActive)
 
 setActive = (item) ->
-  console.log(item)
   $('dl.tabs dd').removeClass('active')
   $('div.tabs-content div').removeClass('active')
   if ! item
