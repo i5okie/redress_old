@@ -29,3 +29,5 @@ doc/
 .secret
 .DS_Store
 Gemfile.lock
+# carrierwave
+public/uploads
