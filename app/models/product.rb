@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
 	belongs_to :category
+	has_many :attached
+	has_many :documented
 	has_many :attachments, through: :attached
 	has_many :documents, through: :documented
 	

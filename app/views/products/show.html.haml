@@ -45,7 +45,7 @@
                 %th{width: 100}
                   Download
             %tbody
-              = @products.pdocuments.each do |pd|
+              = @product.documents.each do |pd|
                 %tr
                   %td
                     = link_to pd.name, pd.filelocation
@@ -62,14 +62,16 @@
                   Filename
                 %th{width: 100}
                   Download
-            %tr
-              %td
-                Filename
-              %td
-                %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
-                  %i.fa.fa-download.fa-fw
-                  %strong
-                    ZIP
+            %tbody
+              = @product.attachments.each do |ad|
+                %tr
+                  %td
+                    = link_to ad.name, ad.filelocation
+                  %td
+                    %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
+                      %i.fa.fa-download.fa-fw
+                      %strong
+                        ad.filetype
         #videos.content
           %a.button.small.radius.disabled
             No Videos :(
