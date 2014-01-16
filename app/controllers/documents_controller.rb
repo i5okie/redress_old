@@ -43,7 +43,7 @@ class DocumentsController < ApplicationController
     respond_to do |format|
       if @document.update(document_params)
         format.html { redirect_to @document, notice: 'Document was successfully updated.' }
-        format.json { render action: 'show', status: :ok, location: @document }
+        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @document.errors, status: :unprocessable_entity }

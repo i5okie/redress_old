@@ -3,8 +3,7 @@ require 'spec_helper'
 describe "categories/show" do
   before(:each) do
     @category = assign(:category, stub_model(Category,
-      :name => "Name",
-      :description => "Description"
+      :name => "Name"
     ))
   end
 
@@ -12,6 +11,5 @@ describe "categories/show" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Name/)
-    rendered.should match(/Description/)
   end
 end

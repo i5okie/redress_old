@@ -43,7 +43,7 @@ class AttachmentsController < ApplicationController
     respond_to do |format|
       if @attachment.update(attachment_params)
         format.html { redirect_to @attachment, notice: 'Attachment was successfully updated.' }
-        format.json { render action: 'show', status: :ok, location: @attachment }
+        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @attachment.errors, status: :unprocessable_entity }

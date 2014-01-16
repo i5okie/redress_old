@@ -2,13 +2,7 @@ class HomeController < ApplicationController
   before_action :set_product, only: [:show]
 
   def index
-  	@products = Product.all
-    @servers = Category.where(name: 'Servers').first.products
-    @computers = Category.where(name: 'Computers').first.products
-    @printers = Category.where(name: 'Printers').first.products
-    @pos = Category.where(name: 'Point-of-Sale').first.products
-    @other = Category.where(name: 'Other').first.products
-
+  	@items = Category.includes(:products)
   end
 
   private
@@ -19,7 +13,7 @@ class HomeController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def product_params
-    params.require(:product).permit(:name, :manufacturer, :model, :category, :description, :link, :image, :remote_image_url, :tags, :apms)
-    params.require(:category).permit(:name)
+    params.require(:product).permit(:name, :id, :manufacturer, :model, :category, :description, :link, :image, :remote_image_url, :tags, :apms)
+    params.require(:category).permit(:name, :id)
   end
 end
