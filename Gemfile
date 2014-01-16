@@ -19,7 +19,6 @@ gem 'acts-as-taggable-on', github: "mbleigh/acts-as-taggable-on"
 # - Use activeadmin
 gem 'activeadmin', github: 'gregbell/active_admin'
 
-
 # PRESENTATION ##############################################################
 # - Use zurb foundation framework
 gem 'foundation-rails'
