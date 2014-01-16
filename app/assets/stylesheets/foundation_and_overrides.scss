@@ -388,7 +388,7 @@ $button-disabled-opacity: 0.6;
  $fieldset-margin: rem-calc(18 0);
 
 // We use these to style the legends when you use them
- $legend-bg: #ccc;
+ $legend-bg: none;
  $legend-font-weight: bold;
  $legend-padding: rem-calc(0 3);
 
@@ -1173,7 +1173,5 @@ fieldset {
 }
 
 legend {
-	font-size: 1.5em;
-	color: #e5e5e5;
-	text-shadow: 1px 1px 0px #fff;
+	color: #fff;
 }
