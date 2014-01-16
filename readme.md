@@ -2,7 +2,6 @@
 ### Self-Service Portal Project for manufacturers and resellers
 
 
-
 Redress is a basic userless customer self-service portal.
 A visitor is first met with any marketing information, and contact information
 of how to get phone assistance or remote tech support (optional).
@@ -12,6 +11,32 @@ and list downloadable documents like user guides, manuals, as well as drivers
 and utilities. As an option, videos can be added either by uploading, or embedding.
 visitors can then chose their product and download the appropriate documentation or
 utilities.
+
+This is a work-in-progress project. Being developed for a value-added-reseller;
+Dealing with many different products, a lot of value-added components of a complete
+system need to have supporting implemintation documentation which sometimes is not 
+availble elsewhere.
+
+The project is being developed with open-source license in hopes to add further
+functionality in the future. Some of this functionality could be issue tracking,
+product tracking. Generating printable barcode label for customers to scan and
+direct to specific product page, where they will be able to see any warranty information
+as well as service contracts, etc.
+
+Future ideas:  issue tracking; outsourced-it customer account management; crm functionality;
+warranty/service expiration/renewal notifications to staff and external customers.
+
+
+
+Contributions / Pull requests are welcome!!
+
+   
+![](https://pbs.twimg.com/media/Bd-DoCNCUAAwbFv.png:large)
+   
+
+#### Completed Work
+* Categorized product listing with images and description
+* Product management (basic CRUD)
 
 This is a work-in-progress project. Being developed for a value-added-reseller;
 Dealing with many different products, a lot of value-added components of a complete
@@ -51,8 +76,7 @@ Contributions / Pull requests are welcome!!
 *   Rails 4.0.2
 *   Ruby 2.0.0-P353
 *   PostgreSQL
-
-
+*   
 
 ## Licence
 
@@ -76,5 +100,7 @@ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
 NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
 LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
