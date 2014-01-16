@@ -45,15 +45,10 @@
                 %th{width: 100}
                   Download
             %tbody
-              = @product.documents.each do |pd|
-                %tr
-                  %td
-                    = link_to pd.name, pd.filelocation
-                  %td
-                    %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
-                      %i.fa.fa-download.fa-fw
-                      %strong
-                        pd.filetype
+              - if @product.documents.empty?
+                = render 'empty'
+              - else
+                = render partial: 'document', collection: @product.documents
         #drivers.content
           %table.table.table-striped.table-hover
             %thead
@@ -63,15 +58,10 @@
                 %th{width: 100}
                   Download
             %tbody
-              = @product.attachments.each do |ad|
-                %tr
-                  %td
-                    = link_to ad.name, ad.filelocation
-                  %td
-                    %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
-                      %i.fa.fa-download.fa-fw
-                      %strong
-                        ad.filetype
+              - if @product.attachments.empty?
+                = render 'empty'
+              - else
+                = render partial: 'attachment', collection: @product.attachments
         #videos.content
           %a.button.small.radius.disabled
             No Videos :(
