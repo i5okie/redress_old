@@ -19,7 +19,7 @@
   .row
     .large-6.columns
       = f.label :image
-      = f.file_field :image, input_html: { class: 'form-control'}
+      = f.input :image, as: :file, input_html: { class: 'form-control'}
     .large-6.columns
       = f.input :remote_image_url
 
@@ -28,7 +28,7 @@
       = f.input :description, input_html: { class: 'form-control' }
     .large-6.columns
       = f.input :category do
-        = f.select :category, Category.all.map { |c| [c.name, c.id]}, include_blank: true, :selected => @product.category.id
+        = f.select :category_id, Category.all.map { |c| [c.name, c.id]}, include_blank: true
 
   .row
     .large-12.columns
@@ -36,10 +36,10 @@
   
   .row
     .large-12.columns
-      = f.input :tags, input_html: { class: 'chosen-select', id: 'tags'}
+      = f.input :tag_list, input_html: { class: 'tagz', id: 'input-tags'}
   .row
     .large-12.columns
-      = f.input :apms, label: 'Applicable Models', input_html: { class: 'form-control', id: 'apms' }
+      = f.input :apm_list, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags2' }
   .row
     .large-12.columns
     = f.button :submit, :class => "button secondary"

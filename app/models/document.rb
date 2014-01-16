@@ -1,7 +1,4 @@
-class Document
-  include Mongoid::Document
-  field :name, type: String
-  field :description, type: String
-  field :filetype, type: String
-  field :filelocation, type: String
+class Document < ActiveRecord::Base
+	has_many :documented
+	has_many :products, through: :documented
 end

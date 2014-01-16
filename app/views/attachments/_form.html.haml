@@ -6,22 +6,18 @@
         - @attachment.errors.full_messages.each do |msg|
           %li= msg
 
-    .row
-      .large-12.columns
-        = f.label :name
-        = f.input :name
-    .row
-      .large-12.columns
-        = f.label :description
-        = f..input :description
-    .row
-      .large-12.columns
-        = f.label :filetype
-        = f..input :filetype
-    .row
-      .large-12.columns
-        = f.label :filelocation
-        = f..input :filelocation
-    .row
-      .large-12.columns
-        = f.button :submit 'Save'
+  .row
+    .large-12.columns
+      = f.input :name
+  .row
+    .large-12.columns
+      = f.input :description
+  .row
+    .large-12.columns
+      = f.input :filetype
+  .row
+    .large-12.columns
+      = f.file_field :filelocation
+  .row
+    .large-12.columns
+      = f.button :submit

@@ -43,7 +43,7 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       if @category.update(category_params)
         format.html { redirect_to @category, notice: 'Category was successfully updated.' }
-        format.json { render action: 'show', status: :ok, location: @category }
+        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @category.errors, status: :unprocessable_entity }
@@ -69,6 +69,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name, :description)
+      params.require(:category).permit(:name)
     end
 end

@@ -1,18 +1,12 @@
-class Product
-  include Mongoid::Document
-  include Mongoid::TagsArentHard
-  mount_uploader :image, ImageUploader
-  has_many :attachments
-  belongs_to :category
+class Product < ActiveRecord::Base
+	belongs_to :category
+	has_many :attached
+	has_many :documented
+	has_many :attachments, through: :attached
+	has_many :documents, through: :documented
+	
+	acts_as_taggable
+	acts_as_taggable_on :apms, :applicables
 
-  field :name
-  field :manufacturer
-  field :model
-  field :description
-  field :link
-  field :image
-
-  taggable_with :tags, separator: ","
-  taggable_with :apms, as: :applicables, separator: ","
-
+	mount_uploader :image, ImageUploader
 end
