@@ -27,7 +27,7 @@
               = f.select :category_id, Category.all.map { |c| [c.name, c.id]}, include_blank: true
         .row
           .large-6.columns
-            = f.input :image, as: :file, input_html: { class: 'form-control'}
+            = f.input :image, as: :file, input_html: { id: 'basic'}
           .large-6.columns
             = f.input :remote_image_url
 
@@ -46,7 +46,8 @@
             = f.input :apm_list, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags2' }
         .row
           .large-12.columns
-            = f.button :submit, :class => "button alert small radius pull-right"
+            .form-actions
+              = f.button :submit, :class => "alert small radius pull-right"
   .row
     .large-12.columns  
       %fieldset

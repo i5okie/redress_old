@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require jquery.fileupload
 //= require selectize
 //= require_tree .
 

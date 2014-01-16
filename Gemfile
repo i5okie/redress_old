@@ -17,6 +17,7 @@ gem 'acts-as-taggable-on', github: "mbleigh/acts-as-taggable-on"
 
 # ADMINISTRATION/MANAGEMENT ##################################################
 # - Use activeadmin
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 
 # PRESENTATION ##############################################################
@@ -25,7 +26,7 @@ gem 'foundation-rails'
 gem 'font-awesome-sass'
 gem "bourbon"
 gem "haml-rails"
-gem 'jquery-fileupload-rails'
+gem 'jquery.fileupload-rails'
 gem "mediaelement_rails"
 gem "selectize-rails"
 
