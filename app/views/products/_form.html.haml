@@ -10,36 +10,65 @@
 
   .row
     .large-12.columns
-      = f.input :name, input_html: { class: 'form-control' }
-  .row
-    .large-6.columns
-      = f.input :manufacturer, input_html: { class: 'form-control' }
-    .large-6.columns
-      = f.input :model, input_html: { class: 'form-control' }
-  .row
-    .large-6.columns
-      = f.label :image
-      = f.input :image, as: :file, input_html: { class: 'form-control'}
-    .large-6.columns
-      = f.input :remote_image_url
+      %fieldset
+        %legend
+          PRODUCT DETAILS
+        .row
+          .large-3.columns
+            = f.input :manufacturer, input_html: { class: 'form-control' }
+          .large-9.columns
+            = f.input :name, input_html: { class: 'form-control' }
+        .row
+          .large-6.columns
+            = f.input :model, input_html: { class: 'form-control' }
+          .large-6.columns
+            = f.input :category do
+              = f.select :category_id, Category.all.map { |c| [c.name, c.id]}, include_blank: true
+        .row
+          .large-6.columns
+            = f.input :image, as: :file, input_html: { class: 'form-control'}
+          .large-6.columns
+            = f.input :remote_image_url
 
+        .row
+          .large-6.columns
+            = f.input :description, input_html: { class: 'form-control' }
+        .row
+          .large-12.columns
+            = f.input :link, input_html: { class: 'form-control' }
+        
+        .row
+          .large-12.columns
+            = f.input :tag_list, input_html: { class: 'tagz', id: 'input-tags'}
+        .row
+          .large-12.columns
+            = f.input :apm_list, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags2' }
+        .row
+          .large-12.columns
+            = f.button :submit, :class => "button alert small radius pull-right"
   .row
-    .large-6.columns
-      = f.input :description, input_html: { class: 'form-control' }
-    .large-6.columns
-      = f.input :category do
-        = f.select :category_id, Category.all.map { |c| [c.name, c.id]}, include_blank: true
+    .large-12.columns  
+      %fieldset
+        %legend
+          PRODUCT ATTACHMENTS
+        .row
+          .large-12.columns
+            %table
+              %tr
+                %th Name
+                %th Description
+                %th Filetype
+                %th Filelocation
+                %th
+                %th
+                %th
 
-  .row
-    .large-12.columns
-      = f.input :link, input_html: { class: 'form-control' }
-  
-  .row
-    .large-12.columns
-      = f.input :tag_list, input_html: { class: 'tagz', id: 'input-tags'}
-  .row
-    .large-12.columns
-      = f.input :apm_list, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags2' }
-  .row
-    .large-12.columns
-    = f.button :submit, :class => "button secondary"
+              - @product.attachments.each do |attachment|
+                %tr
+                  %td= attachment.name
+                  %td= attachment.description
+                  %td= attachment.filetype
+                  %td= attachment.filelocation
+                  %td= link_to 'Show', attachment
+                  %td= link_to 'Edit', edit_attachment_path(attachment)
+                  %td= link_to 'Destroy', attachment, :method => :delete, :data => { :confirm => 'Are you sure?' }
