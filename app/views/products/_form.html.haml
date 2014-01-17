@@ -44,10 +44,7 @@
         .row
           .large-12.columns
             = f.input :apm_list, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags2' }
-        .row
-          .large-12.columns
-            .form-actions
-              = f.button :submit, :class => "alert small radius pull-right"
+
   .row
     .large-12.columns  
       %fieldset
@@ -74,11 +71,9 @@
                   %td= link_to 'Edit', edit_attachment_path(attachment)
                   %td= link_to 'Destroy', attachment, :method => :delete, :data => { :confirm => 'Are you sure?' }
   .row
-    .large-12.columns#attachments
+    #attachments
       = f.simple_fields_for :attached do |attached|
-        .row
-          .large-12.columns
-            = render 'attached_fields', :f => attached
-        .row
-          .large-12.columns
-            = link_to_add_association 'add attachment', f, :attached
+        = render 'attached_fields', :f => attached
+        .links
+          = link_to_add_association 'add attachment', f, :attached
+    = f.button :submit, :class => "alert small radius pull-right"
