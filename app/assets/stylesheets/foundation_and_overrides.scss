@@ -964,41 +964,41 @@ $include-html-tabs-classes: $include-html-classes;
 // TOP BAR
 //
 
-// $include-html-top-bar-classes: $include-html-classes;
+ $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
-// $topbar-bg: $topbar-bg-color;
+ $topbar-bg-color: #333;
+ $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 43px;
-// $topbar-margin-bottom: 0;
+ $topbar-height: 43px;
+ $topbar-margin-bottom: 0;
 
 // Control Input height for top bar
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: normal;
-// $topbar-title-font-size: rem-calc(17);
+ $topbar-title-weight: normal;
+ $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
-// $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-link-bg: #333;
-// $topbar-dropdown-toggle-size: 5px;
-// $topbar-dropdown-toggle-color: #fff;
-// $topbar-dropdown-toggle-alpha: 0.4;
+ $topbar-dropdown-bg: #333;
+ $topbar-dropdown-link-color: #fff;
+ $topbar-dropdown-link-bg: #333;
+ $topbar-dropdown-toggle-size: 5px;
+ $topbar-dropdown-toggle-color: #fff;
+ $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
-// $topbar-link-color-hover: #fff;
-// $topbar-link-color-active: #fff;
-// $topbar-link-weight: normal;
-// $topbar-link-font-size: rem-calc(13);
-// $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg-hover: #272727  ;
-// $topbar-link-bg-active: $primary-color;
-// $topbar-link-bg-active-hover: darken($primary-color, 5%);
-// $topbar-link-font-family: $body-font-family;
+ $topbar-link-color: #fff;
+ $topbar-link-color-hover: #fff;
+ $topbar-link-color-active: #fff;
+ $topbar-link-weight: normal;
+ $topbar-link-font-size: rem-calc(13);
+ $topbar-link-hover-lightness: -10%; // Darken by 10%
+ $topbar-link-bg-hover: #272727  ;
+ $topbar-link-bg-active: $primary-color;
+ $topbar-link-bg-active-hover: darken($primary-color, 5%);
+ $topbar-link-font-family: $body-font-family;
 
 // $topbar-button-font-size: 0.75rem;
 
@@ -1009,13 +1009,13 @@ $include-html-tabs-classes: $include-html-classes;
 // $topbar-dropdown-label-bg: #333;
 
 // Top menu icon styles
-// $topbar-menu-link-transform: uppercase;
-// $topbar-menu-link-font-size: rem-calc(13);
-// $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
+ $topbar-menu-link-transform: uppercase;
+ $topbar-menu-link-font-size: rem-calc(13);
+ $topbar-menu-link-weight: bold;
+ $topbar-menu-link-color: #fff;
+ $topbar-menu-icon-color: #fff;
+ $topbar-menu-link-color-toggled: #888;
+ $topbar-menu-icon-color-toggled: #888;
 
 // Transitions and breakpoint styles
 // $topbar-transition-speed: 300ms;
@@ -1162,11 +1162,24 @@ http://svgeneration.com/generate/GPlay?height=8&width=8&background=f0f0f0&overla
 }
 
 .inset-text {
- font-size: 2.5em;
- color: #282020;
- text-shadow: 1px 1px 0px #444;
- font-weight: bold;
+  font-size: 2.5em;
+  color: #282020;
+  text-shadow: 1px 1px 0px #444;
+  font-weight: bold;
 }
+
+.logo {
+  font-size: 1.5em;
+  color: #282020;
+  text-shadow: 1px 1px 0px #444;
+  font-weight: bold;
+  padding: 2px 25px 0;
+}
+
+.logo:hover {
+  color: #302525;
+}
+
 
 fieldset {
 	background: #eee;
@@ -1175,3 +1188,16 @@ fieldset {
 legend {
 	color: #fff;
 }
+
+.hero-slide {
+	padding: 0;
+	height: 300px;
+	width: 1000px;
+	text-align: center;
+	.h1 { color: #959595; font-size: 3em; margin-top: 40px; }
+	.h2 { color: #fff; font-size: 1.5em; margin-top: 10px; }
+}
+
+.hs-one { background-color: #A92B48; }
+.hs-two { background-color: #FDC43D; }
+.hs-three { background-color: #EE964D; }
