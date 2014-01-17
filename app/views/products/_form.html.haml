@@ -58,20 +58,27 @@
           .large-12.columns
             %table
               %tr
-                %th Name
-                %th Description
-                %th Filetype
-                %th Filelocation
+                %th{width: "400px"} Name
+                %th{width: "20px"}  Filetype
+                %th{width: "200px"}  Filelocation
                 %th
                 %th
                 %th
 
-              - @product.attachments.each do |attachment|
+              - @attachments.each do |attachment|
                 %tr
                   %td= attachment.name
-                  %td= attachment.description
                   %td= attachment.filetype
                   %td= attachment.filelocation
                   %td= link_to 'Show', attachment
                   %td= link_to 'Edit', edit_attachment_path(attachment)
                   %td= link_to 'Destroy', attachment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  .row
+    .large-12.columns#attachments
+      = f.simple_fields_for :attached do |attached|
+        .row
+          .large-12.columns
+            = render 'attached_fields', :f => attached
+        .row
+          .large-12.columns
+            = link_to_add_association 'add attachment', f, :attached

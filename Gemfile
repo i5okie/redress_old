@@ -28,6 +28,7 @@ gem "haml-rails"
 gem 'jquery.fileupload-rails'
 gem "mediaelement_rails"
 gem "selectize-rails"
+gem "cocoon"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

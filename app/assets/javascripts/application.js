@@ -15,6 +15,7 @@
 //= require foundation
 //= require jquery.fileupload
 //= require selectize
+//= require cocoon
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

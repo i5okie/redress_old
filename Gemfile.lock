@@ -99,6 +99,7 @@ GEM
     carrierwave-imagesorcery (0.0.5)
       carrierwave
       image_sorcery (>= 1.1.0)
+    cocoon (1.2.5)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -289,6 +290,7 @@ DEPENDENCIES
   cancan
   carrierwave
   carrierwave-imagesorcery
+  cocoon
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner

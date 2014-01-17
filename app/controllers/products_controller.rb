@@ -15,10 +15,13 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @product.attached.build
+    @product.documented.build
   end
 
   # GET /products/1/edit
   def edit
+    @attachments = Attachment.all
   end
 
   # POST /products
@@ -69,6 +72,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :model, :manufacturer, :link, :image, :remote_image_url, :tags, :apms, :tag_list, :apm_list, :category_id, :documents, :attachments)
+      params.require(:product).permit(:name, :description, :model, :manufacturer, :link, :image, :remote_image_url, :tags, :apms, :tag_list, :apm_list, :category_id, attached_attributes: [:id, :product_id, :attachment_id, :_destroy])
     end
 end

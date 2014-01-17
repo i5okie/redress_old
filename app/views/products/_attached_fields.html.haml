@@ -1,0 +1,10 @@
+.nested-fields.attached-fields
+  .row
+    .large-12.columns#attachedlist
+      = f.association :attachment, :collection => Attachment.all(:order => 'name'), :prompt => 'Choose an existing attachment'
+  .row
+    .large-12.columns
+      = link_to_add_association 'or add a new attachment', f, :attachment
+  .row
+    .large-12.columns
+      = link_to_remove_association "remove attachment", f
