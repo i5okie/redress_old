@@ -1201,3 +1201,18 @@ legend {
 .hs-one { background-color: #A92B48; }
 .hs-two { background-color: #FDC43D; }
 .hs-three { background-color: #EE964D; }
+
+.selectize-input > input {
+  max-width: 100% !important;
+  max-height: 15px !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 1px !important;
+  line-height: inherit !important;
+  text-indent: 0 !important;
+  background: none !important;
+  border: 0 none !important;
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+  -webkit-user-select: auto !important;
+}

@@ -44,32 +44,6 @@
         .row
           .large-12.columns
             = f.input :apm_list, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags2' }
-
-  .row
-    .large-12.columns  
-      %fieldset
-        %legend
-          .label.radius
-            ATTACHMENTS
-        .row
-          .large-12.columns
-            %table
-              %tr
-                %th{width: "400px"} Name
-                %th{width: "20px"}  Filetype
-                %th{width: "200px"}  Filelocation
-                %th
-                %th
-                %th
-
-              - @attachments.each do |attachment|
-                %tr
-                  %td= attachment.name
-                  %td= attachment.filetype
-                  %td= attachment.filelocation
-                  %td= link_to 'Show', attachment
-                  %td= link_to 'Edit', edit_attachment_path(attachment)
-                  %td= link_to 'Destroy', attachment, :method => :delete, :data => { :confirm => 'Are you sure?' }
   .row
     #attachments
       = f.simple_fields_for :attached do |attached|

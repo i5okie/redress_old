@@ -66,3 +66,44 @@ $('#attachments').bind('insertion-callback',
                 $(this).children("a.add_fields").hide();
               });
      });
+
+var REGEX_EMAIL = '([a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@' +
+                  '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)';
+
+$('#select-att').selectize({
+    persist: false,
+    maxItems: null,
+    valueField: 'name',
+    labelField: 'description',
+    searchField: ['name', 'description'],
+    render: {
+        item: function(item, escape) {
+            return '<div>' +
+                (item.name ? '<span class="name">' + escape(item.name) + '</span>' : '') +
+                (item.description ? '<span class="email">' + escape(item.description) + '</span>' : '') +
+            '</div>';
+        },
+        option: function(item, escape) {
+            var label = item.name || item.description;
+            var caption = item.name ? item.description : null;
+            return '<div>' +
+                '<span class="label">' + escape(label) + '</span>' +
+                (caption ? '<span class="caption">' + escape(caption) + '</span>' : '') +
+            '</div>';
+        }
+    },
+    create: function(input) {
+        if ((new RegExp('^' + REGEX_EMAIL + '$', 'i')).test(input)) {
+            return {email: input};
+        }
+        var match = input.match(new RegExp('^([^<]*)\<' + REGEX_EMAIL + '\>$', 'i'));
+        if (match) {
+            return {
+                email : match[2],
+                name  : $.trim(match[1])
+            };
+        }
+        alert('Invalid email address.');
+        return false;
+    }
+});

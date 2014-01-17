@@ -1,8 +1,9 @@
 %tr
   %td
-    = link_to attachment.name, attachment.filelocation
+    %a{href: ''} 
+      =link_to @product.attachment.filelocation do
+        = attachment.name
   %td
     %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
-      %i.fa.fa-download.fa-fw
       %strong
-        attachment.filetype
+        = attachment.filetype

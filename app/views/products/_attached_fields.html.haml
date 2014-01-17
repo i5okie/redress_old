@@ -1,5 +1,5 @@
 .nested-fields.attached-fields
   #attached_from_list
-    = f.association :attachment, :collection => Attachment.all(:order => 'name'), :prompt => 'Choose an existing attachment'
+    = f.association :attachment, label_method: :name, value_method: :description, :collection => Attachment.all(:order => 'name'), :prompt => 'Choose an existing attachment', input_html: { id: 'select-att' }
   = link_to_add_association 'or add a new attachment', f, :attachment
   = link_to_remove_association "remove attachment", f
