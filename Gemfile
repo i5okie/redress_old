@@ -31,7 +31,6 @@ gem "bourbon"
 gem "haml-rails"
 gem 'jquery.fileupload-rails'
 gem "mediaelement_rails"
-gem "selectize-rails"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -53,7 +52,6 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
 
 
 # SECURITY ##################################################################

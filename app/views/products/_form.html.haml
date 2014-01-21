@@ -2,7 +2,7 @@
   - if notification = f.error_notification
     .alert-box.warning.radius{ "data-alert" => true }
       %a.close{href: "#{}"}
-        = notification
+      = notification
 
   .row
     .large-12.columns
@@ -23,11 +23,11 @@
               = f.select :category_id, Category.all.map { |c| [c.name, c.id]}, include_blank: true
         .row
           .large-4.columns
-            = f.input :image, as: :file, input_html: { id: 'basic' }
+            = f.input :image, as: :file, label: false, input_html: { id: 'basic' }
             = image_tag @product.image.url(:medium).to_s, :class=>"th radius"
 
           .large-8.columns
-            = f.input :description, input_html: { class: 'form-control' }
+            = f.input :description, label: false, input_html: { class: 'form-control' }
           .large-8.columns
             = f.input :link, input_html: { class: 'form-control' }
           .large-8.columns

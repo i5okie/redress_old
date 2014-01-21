@@ -1,15 +1,11 @@
 .row
   .large-8.columns
-    .row.collaps
-      .small-3.large-2.columns
-        %span.prefix Name:
-      .small-9.large-10.columns
-        = f.input :name, :label => false
+    = f.input :name
 
 .row
   .large-8.columns
     .row.collapse
       .small-3.large-2.columns
-        %span.prefix http://
+        %span.prefix Name
       .small-9.large-10.columns
         %input{:placeholder => "Enter your URL...", :type => "text"}

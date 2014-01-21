@@ -1,12 +1,12 @@
 GIT
   remote: git://github.com/RailsApps/rails_layout.git
-  revision: 30c2cf6d25a8949529df76525443e93d0b3db4b5
+  revision: 95dd4ecdbd85fc03beb66d95f973b06ea3085922
   specs:
     rails_layout (1.0.5)
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: f381f220219061ee11e65132d2a06bf73007bb8e
+  revision: f21cff30e7212706a39710e2c70ad0af8087ccea
   specs:
     activeadmin (1.0.0.pre)
       arbre (~> 1.0)
