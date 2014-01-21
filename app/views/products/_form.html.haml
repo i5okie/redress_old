@@ -54,8 +54,7 @@
         - if @product.attached.empty?
           = render 'empty'
         - else
-          = f.simple_fields_for :attachments do |att|
-            = render 'att', :f => att
+          = render 'att', collection: @product.attached, :f => f
 
   .row
     .large-12.columns

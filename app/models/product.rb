@@ -1,7 +1,10 @@
+# Each Product will have some Attachments associated with it
+# Each Product will have some Documents associated with it
+
 class Product < ActiveRecord::Base
 	belongs_to :category
-	has_many :attached, dependent: :destroy
-	has_many :documented, dependent: :destroy
+	has_many :attached
+	has_many :documented
 	has_many :attachments, through: :attached
 	has_many :documents, through: :documented
 	

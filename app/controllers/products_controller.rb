@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @attached = Attached.all
     @product.attached.build
     @product.documented.build
   end
@@ -23,6 +24,7 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @attachments = Attachment.all
+    @attached = Attached.all
     @product.attached.build
     @product.documented.build
   end
