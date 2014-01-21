@@ -2,10 +2,6 @@
   .large-8.columns
     = f.input :name
 
-.row
-  .large-8.columns
-    .row.collapse
-      .small-3.large-2.columns
-        %span.prefix Name
-      .small-9.large-10.columns
-        %input{:placeholder => "Enter your URL...", :type => "text"}
+  .large-3.columns
+    = f.input_field :_destroy, as: :boolean, input_html: { id: "right-label", class: "inline"}
+    = f.label :_destroy, "Remove", input_html: { for: "right-label", class: "right inline"}

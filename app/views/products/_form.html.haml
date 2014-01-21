@@ -11,10 +11,10 @@
           .label.radius
             PRODUCT DETAILS
         .row
-          .large-3.columns
-            = f.input :manufacturer, input_html: { class: 'form-control' }
-          .large-9.columns
+          .large-6.columns
             = f.input :name, required: true, input_html: { class: 'form-control' }
+          .large-6.columns
+            = f.input :manufacturer, input_html: { class: 'form-control' }
         .row
           .large-6.columns
             = f.input :model, required: true, input_html: { class: 'form-control' }
