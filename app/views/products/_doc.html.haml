@@ -1,0 +1,7 @@
+= f.simple_fields_for :documents do |doc|
+  .row
+    .large-4.columns
+      = doc.label @document.name
+    .large-2.columns
+      = doc.check_box :_destroy
+      = doc.label :_destroy, "Remove"

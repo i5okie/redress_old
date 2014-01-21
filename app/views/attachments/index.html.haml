@@ -14,8 +14,8 @@
     %tr
       %td= attachment.name
       %td= attachment.description
-      %td= attachment.filetype
-      %td= attachment.filelocation
+      %td= attachment.file_content_type
+      %td= attachment.file.url
       %td= link_to 'Show', attachment
       %td= link_to 'Edit', edit_attachment_path(attachment)
       %td= link_to 'Destroy', attachment, :method => :delete, :data => { :confirm => 'Are you sure?' }

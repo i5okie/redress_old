@@ -51,22 +51,6 @@ $(window).bind("load", function () {
     }
 });
 
-$('#attachments a.add_fields').
-  data("association-insertion-position", 'before').
-  data("association-insertion-node", 'this');
-
-$('#attachments').bind('insertion-callback',
-     function() {
-         $(".attached-fields a.add_fields").
-             data("association-insertion-position", 'before').
-             data("association-insertion-node", 'this');
-         $('.attached-fields').bind('insertion-callback',
-              function() {
-                $(this).children("#attached_from_list").remove();
-                $(this).children("a.add_fields").hide();
-              });
-     });
-
 var REGEX_EMAIL = '([a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@' +
                   '(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)';
 

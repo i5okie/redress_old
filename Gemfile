@@ -9,9 +9,13 @@ gem 'rails', '4.0.2'
 gem 'pg'
 
 # - Use Carrierwave for uploading files
-gem 'carrierwave'
+#gem 'carrierwave'
 # - Use Carrierwave with imagesorcery for image manipulation
-gem 'carrierwave-imagesorcery'
+#gem 'carrierwave-imagesorcery'
+
+# - Use Paperclip for file uploading instead
+gem "paperclip", "~> 3.0"
+
 gem 'acts-as-taggable-on', github: "mbleigh/acts-as-taggable-on"
 
 
@@ -28,7 +32,6 @@ gem "haml-rails"
 gem 'jquery.fileupload-rails'
 gem "mediaelement_rails"
 gem "selectize-rails"
-gem "cocoon"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

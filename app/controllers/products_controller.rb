@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @attachments = Attachment.all.where(id: @product)
   end
 
   # GET /products/new
@@ -74,6 +75,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :model, :manufacturer, :link, :image, :remote_image_url, :tags, :apms, :tag_list, :apm_list, :category_id, attached_attributes: [:id, :product_id, :attachment_id, :_destroy], attachment_attributes: [:id, :name, :description, :filetype, :filelocation], )
+      params.require(:product).permit(:name, :description, :model, :manufacturer, :link, :image, :attachment, :document, :tags, :apms, :tag_list, :apm_list, :category_id, :attached, :documented)
     end
 end

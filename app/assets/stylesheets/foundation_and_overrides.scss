@@ -921,18 +921,18 @@ $include-html-tabs-classes: $include-html-classes;
 // THUMBNAILS
 //
 
-// $include-html-media-classes: $include-html-classes;
+ $include-html-media-classes: $include-html-classes;
 
 // We use these to control border styles
-// $thumb-border-style: solid;
-// $thumb-border-width: 4px;
-// $thumb-border-color: #fff;
-// $thumb-box-shadow: 0 0 0 1px rgba(#000,.2);
-// $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
+ $thumb-border-style: none;
+ $thumb-border-width: 1px;
+ $thumb-border-color: #fff;
+ $thumb-box-shadow: 0 0 0 0px rgba(#000,.2);
+ $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
 
 // Radius and transition speed for thumbs
-// $thumb-radius: $global-radius;
-// $thumb-transition-speed: 200ms;
+ $thumb-radius: 10px;
+ $thumb-transition-speed: 100ms;
 
 //
 // TOOLTIPS
@@ -1215,4 +1215,9 @@ legend {
   -webkit-box-shadow: none !important;
           box-shadow: none !important;
   -webkit-user-select: auto !important;
+}
+
+.thumb {
+	border-style: none;
+	border-color: #fff;
 }

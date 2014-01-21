@@ -1,23 +1,15 @@
 = simple_form_for @attachment do |f|
-  - if @attachment.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@attachment.errors.count, "error")} prohibited this attachment from being saved:"
-      %ul
-        - @attachment.errors.full_messages.each do |msg|
-          %li= msg
+  - if notification = f.error_notification
+    .alert-box.radius{ "data-alert" => true }
+      = notification
+      %a.close{href: "#"}
+      
+  = f.input :name, required: true
 
-  .row
-    .large-12.columns
-      = f.input :name
-  .row
-    .large-12.columns
-      = f.input :description
-  .row
-    .large-12.columns
-      = f.input :filetype
-  .row
-    .large-12.columns
-      = f.file_field :filelocation
-  .row
-    .large-12.columns
-      = f.button :submit
+  = f.input :description, required: false
+
+  = f.input :filetype, required: false
+
+  = f.file_field :file, required: true
+
+  = f.button :submit

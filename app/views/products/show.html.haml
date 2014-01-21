@@ -18,7 +18,7 @@
           .lead= @product.description
       .large-4.columns
         .right
-          = image_tag @product.image_url(:thumb).to_s, :class=>"img-rounded"
+          = image_tag @product.image.url(:medium).to_s, :class=>"th radius"
   .row
     .large-12.columns
       %h3 Available Resources
@@ -62,7 +62,7 @@
               - if @product.attachments.empty?
                 = render 'empty'
               - else
-                = render partial: 'attachment', collection: @product.attachments
+                = render partial: 'attachment', collection: @attachments
         #videos.content
           %a.button.small.radius.disabled
             No Videos :(
