@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 #source 'http://gems.github.com'
 
-
 gem 'rails', '4.0.2'
 
 
@@ -15,8 +14,10 @@ gem 'pg'
 
 # - Use Paperclip for file uploading instead
 gem "paperclip", "~> 3.0"
-
 gem 'acts-as-taggable-on', github: "mbleigh/acts-as-taggable-on"
+gem 'best_in_place',
+  :git => 'https://github.com/bernat/best_in_place.git',
+  :branch => 'rails-4'
 
 
 # ADMINISTRATION/MANAGEMENT ##################################################
