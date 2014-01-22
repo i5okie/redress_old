@@ -1,6 +1,8 @@
 class AttachmentsController < ApplicationController
   before_action :set_attachment, only: [:show, :edit, :update, :destroy]
 
+  respond_to :html, :json
+
   # GET /attachments
   # GET /attachments.json
   def index
@@ -19,36 +21,22 @@ class AttachmentsController < ApplicationController
 
   # GET /attachments/1/edit
   def edit
+    respond_with @attachment
   end
 
   # POST /attachments
   # POST /attachments.json
   def create
     @attachment = Attachment.new(attachment_params)
-
-    respond_to do |format|
-      if @attachment.save
-        format.html { redirect_to @attachment, notice: 'Attachment was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @attachment }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @attachment.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = 'Attachment was successfully created.' if @attachment.save
+    respond_with @attachment
   end
 
   # PATCH/PUT /attachments/1
   # PATCH/PUT /attachments/1.json
   def update
-    respond_to do |format|
-      if @attachment.update(attachment_params)
-        format.html { redirect_to @attachment, notice: 'Attachment was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @attachment.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = 'Attachment was successfully updated.' if @attachment.update(attachment_params)
+    respond_with @attachment
   end
 
   # DELETE /attachments/1
@@ -56,7 +44,7 @@ class AttachmentsController < ApplicationController
   def destroy
     @attachment.destroy
     respond_to do |format|
-      format.html { redirect_to attachments_url }
+      format.html { redirect_to [:edit, @attachment.product] }
       format.json { head :no_content }
     end
   end

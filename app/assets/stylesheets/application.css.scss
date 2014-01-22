@@ -15,3 +15,43 @@
 @import 'selectize';
 @import 'selectize.default';
 @import 'foundation_and_overrides';
+
+.file_tile {
+  .header {
+    padding-bottom: 0.5em;
+    .column_label {
+      font-size: 0.6em;
+      text-align: center;
+    }
+  }
+  .filelist {
+    font-size: 0.9em;
+    .form_in_place {
+      input[type=text] {
+        padding: 0;
+        height: 1.25em;
+        // margin: 0;
+        border: 0;
+        &:focus,
+        &:active,
+        &:hover {
+          background: lighten(yellow,40%);;
+          background-image: none;
+        }
+      }
+    }
+    .filename {
+      height: 2em;
+      a {
+        font-size: 0.5em;
+        display: inline-block;
+      }
+    }
+    .download_link {
+
+    }
+    .delete_checkbox {
+      text-align: center;
+    }
+  }
+}

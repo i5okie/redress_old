@@ -1,4 +1,4 @@
-= simple_form_for(@product) do |f|
+= simple_form_for @product, :html => { :multipart => true } do |f|
   - if notification = f.error_notification
     .alert-box.warning.radius{ "data-alert" => true }
       %a.close{href: "#{}"}
@@ -23,8 +23,8 @@
               = f.select :category_id, Category.all.map { |c| [c.name, c.id]}, include_blank: true
         .row
           .large-4.columns
-            = f.input :image, as: :file, label: false, input_html: { id: 'basic' }
             = image_tag @product.image.url(:medium).to_s, :class=>"th radius"
+            = f.input :image, as: :file, label: false, input_html: { id: 'basic' }
 
           .large-8.columns
             = f.input :description, label: false, input_html: { class: 'form-control' }
@@ -35,27 +35,50 @@
           .large-8.columns
             = f.input :apm_list, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags2' }
   .row
-    .large-6.columns
+    .large-6.columns.file_tile
       %fieldset
         %legend
           .label.radius
             DOCUMENTS
-        - if @product.documented.empty?
+        .row.header
+          .small-2.small-offset-10.column.column_label
+            %span= "Remove"
+
+        - if @product.documents.empty?
           = render 'empty'
         - else
-          = render 'doc', collection: @product.documented, :f => f
+          = render partial: 'doc', collection: @product.documents, locals: { f: f }
 
+        .row
+          .panel.top-buffer
+            = f.simple_fields_for :documents, @product.documents.build do |d|
+              = d.label :doc, "Upload a document"
+              = d.file_field :doc
 
-    .large-6.columns
+    .large-6.columns.file_tile
       %fieldset
         %legend
           .label.radius
             ATTACHMENTS
-        - if @product.attached.empty?
+        .row.header
+          .small-2.small-offset-10.column.column_label
+            %span= "Remove"
+        - if @product.attachments.empty?
           = render 'empty'
         - else
-          = render 'att', collection: @product.attached, :f => f
+          = render partial: 'att', collection: @product.attachments, locals: { f: f }
+
+        .row
+          .panel.top-buffer
+            = f.simple_fields_for :attachments, @product.attachments.build do |a|
+              = a.label :file, "Upload an attachment or file"
+              = a.file_field :file
 
   .row
-    .large-12.columns
-      = f.button :submit, :class => "alert small radius pull-right"
+    %ul.button-group.right
+      %li 
+        =link_to 'Show', @product, :class => 'small radius button'
+      %li 
+        =f.button :submit, "Save", :class => "alert small radius button"
+      %li 
+        =link_to 'Cancel', products_path, :class => 'small radius button secondary'
