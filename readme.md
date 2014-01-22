@@ -32,9 +32,9 @@ warranty/service expiration/renewal notifications to staff and external customer
 Contributions / Pull requests are welcome!!
 
    
-![](screenshot.png)
+![](http://i.imgur.com/kdAZjjh.png)
 
-![](screenshot2.png)
+![](http://i.imgur.com/27bADoh.png)
    
 
 #### Completed Work
