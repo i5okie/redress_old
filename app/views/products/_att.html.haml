@@ -1,8 +1,8 @@
-= f.simple_fields_for :attachments do |att|
-  .row
-    .large-8.columns
-      = att.label @attached.first.attachment.name
-
-    .large-3.columns
-      = att.input_field :_destroy, as: :boolean, input_html: { id: "right-label", class: "inline"}
-      = att.label :_destroy, "Remove", input_html: { for: "right-label", class: "right inline"}
+.row.filelist
+  .small-8.columns.filename
+    = best_in_place att, :name, :cancel_button => "Cancel", :ok_button => "OK", :nil => att.file.original_filename
+  .small-2.columns.download_link
+    = link_to "Download", att.file.url, class: "small-offset-1"
+  .small-2.columns.delete_checkbox
+    = f.simple_fields_for :documents, att do |attachment|
+      = attachment.input_field :_destroy, as: :boolean

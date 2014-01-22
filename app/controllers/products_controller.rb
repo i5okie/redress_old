@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @attachments = Attachment.all.where(id: @product)
+    @attachments = @product.attachments
   end
 
   # GET /products/new
@@ -50,11 +50,11 @@ class ProductsController < ApplicationController
   def update
     respond_to do |format|
       if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to [:edit, @product], notice: 'Product was successfully updated.' }
+        format.json { response_with_bip(@product) }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+        format.json { response_with_bip(@product) }
       end
     end
   end
@@ -77,6 +77,19 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :model, :manufacturer, :link, :image, :attachment, :document, :tags, :apms, :tag_list, :apm_list, :category_id, :attached, :documented)
+      params.require(:product).permit(  :name, 
+                                        :description, 
+                                        :model, 
+                                        :manufacturer, 
+                                        :link, 
+                                        :image, 
+                                        :tags, 
+                                        :apms, 
+                                        :tag_list, 
+                                        :apm_list, 
+                                        :category_id, 
+                                        attachments_attributes: [:file, :id, :_destroy], 
+                                        documents_attributes: [:doc, :id, :_destroy]
+                                        )
     end
 end

@@ -32,6 +32,15 @@ GIT
       activesupport (>= 3, < 5)
 
 GIT
+  remote: https://github.com/bernat/best_in_place.git
+  revision: 366413be357d65cdf47031e928aea969f72e3659
+  branch: rails-4
+  specs:
+    best_in_place (2.0.3)
+      jquery-rails
+      rails (~> 4)
+
+GIT
   remote: https://github.com/plataformatec/simple_form
   revision: ea5ceb7dfa613f432efbfa04195c86599a16d973
   specs:
@@ -275,6 +284,7 @@ DEPENDENCIES
   acts-as-taggable-on!
   analytics-ruby
   bcrypt-ruby
+  best_in_place!
   better_errors
   binding_of_caller
   bourbon

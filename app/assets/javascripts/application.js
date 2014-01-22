@@ -15,6 +15,8 @@
 //= require foundation
 //= require jquery.fileupload
 //= require selectize
+//= require best_in_place
+//= require best_in_place.purr
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
