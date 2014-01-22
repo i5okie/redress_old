@@ -1,12 +1,8 @@
 = simple_form_for(@product) do |f|
-  - if @product.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@product.errors.count, "error")
-        prohibited this product from being saved:
-      %ul
-        - @product.errors.full_messages.each do |msg|
-          %li= msg
+  - if notification = f.error_notification
+    .alert-box.warning.radius{ "data-alert" => true }
+      %a.close{href: "#{}"}
+      = notification
 
   .row
     .large-12.columns
@@ -15,39 +11,51 @@
           .label.radius
             PRODUCT DETAILS
         .row
-          .large-3.columns
+          .large-6.columns
+            = f.input :name, required: true, input_html: { class: 'form-control' }
+          .large-6.columns
             = f.input :manufacturer, input_html: { class: 'form-control' }
-          .large-9.columns
-            = f.input :name, input_html: { class: 'form-control' }
         .row
           .large-6.columns
-            = f.input :model, input_html: { class: 'form-control' }
+            = f.input :model, required: true, input_html: { class: 'form-control' }
           .large-6.columns
-            = f.input :category do
+            = f.input :category, required: true do
               = f.select :category_id, Category.all.map { |c| [c.name, c.id]}, include_blank: true
         .row
-          .large-6.columns
-            = f.input :image, as: :file, input_html: { id: 'basic'}
-          .large-6.columns
-            = f.input :remote_image_url
+          .large-4.columns
+            = f.input :image, as: :file, label: false, input_html: { id: 'basic' }
+            = image_tag @product.image.url(:medium).to_s, :class=>"th radius"
 
-        .row
-          .large-6.columns
-            = f.input :description, input_html: { class: 'form-control' }
-        .row
-          .large-12.columns
+          .large-8.columns
+            = f.input :description, label: false, input_html: { class: 'form-control' }
+          .large-8.columns
             = f.input :link, input_html: { class: 'form-control' }
-        
-        .row
-          .large-12.columns
+          .large-8.columns
             = f.input :tag_list, input_html: { class: 'tagz', id: 'input-tags'}
-        .row
-          .large-12.columns
+          .large-8.columns
             = f.input :apm_list, label: 'Applicable Models', input_html: { class: 'tagz', id: 'input-tags2' }
   .row
-    #attachments
-      = f.simple_fields_for :attached do |attached|
-        = render 'attached_fields', :f => attached
-        .links
-          = link_to_add_association 'add attachment', f, :attached
-    = f.button :submit, :class => "alert small radius pull-right"
+    .large-6.columns
+      %fieldset
+        %legend
+          .label.radius
+            DOCUMENTS
+        - if @product.documented.empty?
+          = render 'empty'
+        - else
+          = render 'doc', collection: @product.documented, :f => f
+
+
+    .large-6.columns
+      %fieldset
+        %legend
+          .label.radius
+            ATTACHMENTS
+        - if @product.attached.empty?
+          = render 'empty'
+        - else
+          = render 'att', collection: @product.attached, :f => f
+
+  .row
+    .large-12.columns
+      = f.button :submit, :class => "alert small radius pull-right"

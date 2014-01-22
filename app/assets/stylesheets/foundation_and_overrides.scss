@@ -575,26 +575,26 @@ $button-disabled-opacity: 0.6;
 
 // Orbit
 
-// $include-html-orbit-classes: $include-html-classes;
+ $include-html-orbit-classes: $include-html-classes;
 
 // We use these to control the caption styles
-// $orbit-container-bg: none;
-// $orbit-caption-bg: rgba(51,51,51, 0.8);
-// $orbit-caption-font-color: #fff;
-// $orbit-caption-font-size: rem-calc(14);
-// $orbit-caption-position: "bottom"; // Supported values: "bottom", "under"
-// $orbit-caption-padding: rem-calc(10,14);
-// $orbit-caption-height: auto;
+ $orbit-container-bg: none;
+ $orbit-caption-bg: rgba(51,51,51, 0.8);
+ $orbit-caption-font-color: #fff;
+ $orbit-caption-font-size: rem-calc(14);
+ $orbit-caption-position: "bottom"; // Supported values: "bottom", "under"
+ $orbit-caption-padding: rem-calc(10,14);
+ $orbit-caption-height: auto;
 
 // We use these to control the left/right nav styles
-// $orbit-nav-bg: none;
-// $orbit-nav-bg-hover: rgba(0,0,0,0.3);
-// $orbit-nav-arrow-color: #fff;
-// $orbit-nav-arrow-color-hover: #fff;
+ $orbit-nav-bg: none;
+ $orbit-nav-bg-hover: rgba(0,0,0,0.3);
+ $orbit-nav-arrow-color: #fff;
+ $orbit-nav-arrow-color-hover: #fff;
 
-// We use these to control the timer styles
-// $orbit-timer-bg: rgba(255,255,255,0.3);
-// $orbit-timer-show-progress-bar: true;
+// We use these to control the timer stylesz
+ $orbit-timer-bg: rgba(255,255,255,0.3);
+ $orbit-timer-show-progress-bar: false;
 
 // We use these to control the bullet nav styles
 // $orbit-bullet-nav-color: #ccc;
@@ -602,12 +602,12 @@ $button-disabled-opacity: 0.6;
 // $orbit-bullet-radius: rem-calc(9);
 
 // We use these to controls the style of slide numbers
-// $orbit-slide-number-bg: rgba(0,0,0,0);
-// $orbit-slide-number-font-color: #fff;
-// $orbit-slide-number-padding: rem-calc(5);
+ $orbit-slide-number-bg: rgba(0,0,0,0);
+ $orbit-slide-number-font-color: #fff;
+ $orbit-slide-number-padding: rem-calc(5);
 
 // Graceful Loading Wrapper and preloader
-// $wrapper-class: "slideshow-wrapper";
+ $wrapper-class: "slideshow-wrapper";
 // $preloader-class: "preloader";
 
 // Pagination
@@ -921,18 +921,18 @@ $include-html-tabs-classes: $include-html-classes;
 // THUMBNAILS
 //
 
-// $include-html-media-classes: $include-html-classes;
+ $include-html-media-classes: $include-html-classes;
 
 // We use these to control border styles
-// $thumb-border-style: solid;
-// $thumb-border-width: 4px;
-// $thumb-border-color: #fff;
-// $thumb-box-shadow: 0 0 0 1px rgba(#000,.2);
-// $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
+ $thumb-border-style: none;
+ $thumb-border-width: 1px;
+ $thumb-border-color: #fff;
+ $thumb-box-shadow: 0 0 0 0px rgba(#000,.2);
+ $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
 
 // Radius and transition speed for thumbs
-// $thumb-radius: $global-radius;
-// $thumb-transition-speed: 200ms;
+ $thumb-radius: 10px;
+ $thumb-transition-speed: 100ms;
 
 //
 // TOOLTIPS
@@ -1216,3 +1216,10 @@ legend {
           box-shadow: none !important;
   -webkit-user-select: auto !important;
 }
+
+.thumb {
+	border-style: none;
+	border-color: #fff;
+}
+
+.selectize-input div.item + input { display: inline-block; }

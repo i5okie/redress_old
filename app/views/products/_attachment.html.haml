@@ -1,9 +1,9 @@
 %tr
   %td
-    %a{href: ''} 
-      =link_to @product.attachment.filelocation do
-        = attachment.name
+    = link_to attachment.name, attachment.file.url
+      
   %td
-    %a.btn.btn-default.btn-xs.btn-success{:href => "#{}"}
+    %a.btn.btn-default.btn-xs.btn-success{:href => "#{attachment.file.url}"}
+      %i.fa.fa-download.fa-fw
       %strong
-        = attachment.filetype
+        = File.extname(attachment.file_file_name).capitalize
