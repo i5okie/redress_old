@@ -4,10 +4,11 @@ class Document < ActiveRecord::Base
 	has_many :products, through: :documented
 
 	has_attached_file :doc
-  validates :doc, :attachment_presence => true
+	validates :doc, :attachment_presence => true
+  
 
-  def display_name
-    self.name.present? ? self.name : "No Name"
-  end
+	def display_name
+		self.name.present? ? self.name : "No Name"
+	end
   
 end

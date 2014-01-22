@@ -66,9 +66,6 @@
         - if @product.attachments.empty?
           = render 'empty'
         - else
-<<<<<<< HEAD
-          = render 'att', collection: @product.attachments, :f => f
-=======
           = render partial: 'att', collection: @product.attachments, locals: { f: f }
 
         .row
@@ -76,7 +73,6 @@
             = f.simple_fields_for :attachments, @product.attachments.build do |a|
               = a.label :file, "Upload an attachment or file"
               = a.file_field :file
->>>>>>> bc03d73bd0acfc93a89621445fd8ef68a34105c5
 
   .row
     %ul.button-group.right

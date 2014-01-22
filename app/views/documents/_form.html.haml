@@ -5,19 +5,20 @@
       %ul
         - @document.errors.full_messages.each do |msg|
           %li= msg
-
   .row
     .large-12.columns
-      = f.input :name
-  .row
-    .large-12.columns
-      = f.input :description
-  .row
-    .large-12.columns
-      = f.input :filetype
-  .row
-    .large-12.columns
-      = f.file_field :filelocation
-  .row
-    .large-12.columns
-      = f.button :submit
+      %fieldset
+        %legend
+          .label.radius
+            DOCUMENT
+        .row
+          .large-6.columns
+            = f.input :name, required: true, input_html: { class: 'form-control' }
+          .large-6.columns
+            = f.input :description, input_html: { class: 'form-control' }
+        .row
+          .large-4.columns
+            = f.input :doc, as: :file, label: false, input_html: { id: 'basic' }
+        .row
+          .large-12.columns
+            = f.button :submit
