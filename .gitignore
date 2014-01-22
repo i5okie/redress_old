@@ -30,3 +30,5 @@ doc/
 .DS_Store
 # carrierwave
 public/uploads
+# paperclip
+public/system
