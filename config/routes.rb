@@ -3,6 +3,9 @@ Redress::Application.routes.draw do
   ActiveAdmin.routes(self)
   resources :documents
   resources :attachments
+  resources :attached do
+    get 'attachments'
+  end
   resources :categories
   resources :products
 

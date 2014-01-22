@@ -54,7 +54,7 @@
         - if @product.attached.empty?
           = render 'empty'
         - else
-          = render 'att', collection: @product.attached, :f => f
+          = render 'att', collection: @product.attachments, :f => f
 
   .row
     .large-12.columns

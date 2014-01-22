@@ -1,7 +1,7 @@
-= f.simple_fields_for :attachments do |att|
+= f.simple_fields_for :attached do |att|
   .row
     .large-8.columns
-      = att.label @attached.first.attachment.name
+      = att.input :name
 
     .large-3.columns
       = att.input_field :_destroy, as: :boolean, input_html: { id: "right-label", class: "inline"}
