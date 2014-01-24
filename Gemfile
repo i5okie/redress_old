@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
 
-
 # STORAGE ###################################################################
 gem 'pg'
 
@@ -22,7 +21,7 @@ gem 'best_in_place',
 
 # ADMINISTRATION/MANAGEMENT ##################################################
 # - Use activeadmin
-gem 'activeadmin', github: 'gregbell/active_admin'
+
 
 # PRESENTATION ##############################################################
 # - Use zurb foundation framework
