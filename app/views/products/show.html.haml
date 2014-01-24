@@ -66,5 +66,7 @@
         #videos.content
           %a.button.small.radius.disabled
             No Videos :(
-
-    = link_to "Edit", edit_product_path(@product), class: 'button tiny'
+  -if user_signed_in?
+    .row
+      .large-2.columns
+        = link_to "Edit", edit_product_path(@product), class: 'button tiny'

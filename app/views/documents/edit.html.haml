@@ -1,7 +1,8 @@
-%h1 Editing document
+-if user_signed_in?
+  %h1 Editing document
 
-= render 'form'
+  = render 'form'
 
-= link_to 'Show', @document
-\|
-= link_to 'Back', documents_path
+  = link_to 'Show', @document
+  \|
+  = link_to 'Back', documents_path

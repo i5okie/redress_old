@@ -1,9 +1,10 @@
-.row
-	.large-12.columns
-		%ul#breadcrumbs-two
-			%li
-				%a EDITING
-			%li
-				%a{:href=> "#"}= @product.name
-.container
-	= render 'form'
+-if user_signed_in?
+	.row
+		.large-12.columns
+			%ul#breadcrumbs-two
+				%li
+					%a EDITING
+				%li
+					%a{:href=> "#"}= @product.name
+	.container
+		= render 'form'

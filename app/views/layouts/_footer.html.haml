@@ -1,5 +1,13 @@
 #footer
   .row
-    .large-12.columns
-      .inset-text
-        REDRESS
+  .large-6.columns
+    .inset-text
+      REDRESS
+  .large-2.columns.pull-right
+    %p
+      -if user_signed_in?
+        logged in
+        =link_to "Sign Out", destroy_user_session_path, :method => :delete
+      - else
+        = link_to "Sign In", new_user_session_path, :method => :get
+        = link_to "Sign up", new_user_registration_path, :method => :get
