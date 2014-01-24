@@ -20,7 +20,9 @@ gem 'best_in_place',
 
 
 # ADMINISTRATION/MANAGEMENT ##################################################
-# - Use activeadmin
+#gem 'devise'
+#gem 'cancan'
+#gem 'rolify'
 
 
 # PRESENTATION ##############################################################
