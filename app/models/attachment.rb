@@ -1,6 +1,7 @@
 # Each Attachment will be associated with some Products
 
 class Attachment < ActiveRecord::Base
+	resourcify
 
 	has_many :attached
 	has_many :products, through: :attached

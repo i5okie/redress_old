@@ -2,6 +2,7 @@
 # Each Product will have some Documents associated with it
 
 class Product < ActiveRecord::Base
+	resourcify
 	belongs_to :category
 	has_many :attached
 	has_many :documented

@@ -1,4 +1,5 @@
 class Document < ActiveRecord::Base
+	resourcify
 
 	has_many :documented
 	has_many :products, through: :documented
