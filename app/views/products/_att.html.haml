@@ -1,6 +1,6 @@
 .row.filelist
   .small-8.columns.filename
-    = best_in_place att, :name, :cancel_button => "Cancel", :ok_button => "OK", :nil => att.file.original_filename
+    = best_in_place att, :name, :nil => att.file.original_filename
   .small-2.columns.download_link
     = link_to "Download", att.file.url, class: "small-offset-1"
   .small-2.columns.delete_checkbox
