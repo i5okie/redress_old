@@ -1,0 +1,8 @@
+.row.filelist
+  .small-4.columns.filename
+    = best_in_place vid, :name, :nil => vid.name
+  .small-4.columns.download_link
+    = best_in_place vid, :source, :nil => vid.source
+  .small-2.columns.delete_checkbox
+    = f.simple_fields_for :videos, vid do |video|
+      = video.input_field :_destroy, as: :boolean
