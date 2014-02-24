@@ -54,7 +54,7 @@
           %table.table.table-striped.table-hover
             %thead
               %tr
-                %th{width: 850}
+                %th{width: 840}
                   Filename
                 %th{width: 100}
                   Download
@@ -64,8 +64,18 @@
               - else
                 = render partial: 'attachment', collection: @attachments
         #videos.content
-          %a.button.small.radius.disabled
-            No Videos :(
+          %table.table.table-striped.table-hover
+            %thead
+              %tr
+                %th{width: 650}
+                  / Video
+                %th{width: 400}
+                  / Description
+            %tbody
+              - if @product.videos.empty?
+                = render 'empty'
+              - else
+                = render partial: 'video', collection: @product.videos
   -if user_signed_in?
     .row
       .large-2.columns

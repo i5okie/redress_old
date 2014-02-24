@@ -1,4 +1,6 @@
 Redress::Application.routes.draw do
+  resources :videos
+
   devise_for :users
   resources :documents
   resources :attachments

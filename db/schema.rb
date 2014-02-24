@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140124185919) do
+ActiveRecord::Schema.define(version: 20140203175128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,13 @@ ActiveRecord::Schema.define(version: 20140124185919) do
     t.datetime "image_updated_at"
   end
 
+  create_table "prodvideos", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "video_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -161,5 +168,13 @@ ActiveRecord::Schema.define(version: 20140124185919) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
+
+  create_table "videos", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "source"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

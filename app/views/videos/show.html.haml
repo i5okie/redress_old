@@ -1,0 +1,23 @@
+.row
+  .large-12.columns
+    %h3
+      = @video.name
+.vid
+  .row
+    .large-8.columns
+      = video_tag(@video.source, size: "640x360", autobuffer: true, id: "player1")
+    .large-4.columns.desc
+      .h4
+        Description
+      .desctext
+        %p
+          = @video.description
+
+:javascript
+  // using jQuery
+  $('video,audio').mediaelementplayer(/* Options */);
+
+
+= link_to 'Edit', edit_video_path(@video)
+\|
+= link_to 'Back', videos_path

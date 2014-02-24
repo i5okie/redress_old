@@ -6,11 +6,14 @@ class Product < ActiveRecord::Base
 	belongs_to :category
 	has_many :attached
 	has_many :documented
+	has_many :prodvideo
+	has_many :videos, through: :prodvideo
 	has_many :attachments, through: :attached
 	has_many :documents, through: :documented
 	
 	accepts_nested_attributes_for :attachments, :allow_destroy => true, :reject_if => :all_blank
 	accepts_nested_attributes_for :documents, :allow_destroy => true, :reject_if => :all_blank
+	accepts_nested_attributes_for :videos, :allow_destroy => true, :reject_if => :all_blank
 
 	acts_as_taggable
 	acts_as_taggable_on :apms, :applicables

@@ -344,15 +344,15 @@ $button-disabled-opacity: 0.6;
 
 // Flex Video
 
-// $include-html-media-classes: $include-html-classes;
+$include-html-media-classes: $include-html-classes;
 
 // We use these to control video container padding and margins
-// $flex-video-padding-top: rem-calc(25);
-// $flex-video-padding-bottom: 67.5%;
-// $flex-video-margin-bottom: rem-calc(16);
+$flex-video-padding-top: rem-calc(25);
+$flex-video-padding-bottom: 47.5%;
+$flex-video-margin-bottom: rem-calc(16);
 
 // We use this to control widescreen bottom padding
-// $flex-video-widescreen-padding-bottom: 57.25%;
+$flex-video-widescreen-padding-bottom: 57.25%;
 
 // Forms
 
@@ -1177,7 +1177,9 @@ http://svgeneration.com/generate/GPlay?height=8&width=8&background=f0f0f0&overla
 }
 
 .logo:hover {
-  color: #302525;
+  color: #A92B48;
+  text-shadow: 1px 1px 0px #222;
+  line-height: -2;
 }
 
 
@@ -1223,3 +1225,39 @@ legend {
 }
 
 .selectize-input div.item + input { display: inline-block; }
+
+.ffix {
+	margin: 1px 0 1px 1px;
+	padding: 1px 0 1px 1px;
+}
+
+.vid {
+	// margin: 1px 20px 1px 1px;
+	// padding: 1px 0 1px 1px;
+	height: 362px;
+	// overflow: hidden;
+	// margin-top: 10px;
+	// padding-top: 30px;
+	// padding-bottom: 30px;
+	// background: rgba(33,33,33,0.1);
+}
+
+.desc {
+	// background: rgba(33,33,33,0.8);
+	height: 360px;
+}
+
+.desc .h4 {
+	font-size: 1.5em;
+	margin-top: 0;
+	padding: 5px 0 5px 5px;
+	color: #fff;
+    background: #000;
+}
+
+.desctext {
+	font-size: 1em;
+	color: #333;
+	padding: 10px 0 0 5px;
+	p { font-weight: 200; font-size: 0.8em;}
+}

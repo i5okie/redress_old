@@ -1,0 +1,37 @@
+%tr
+  %td
+    %h3
+      = video.name
+  %td
+%tr
+  %td
+    = video_tag(video.source, size: "640x360", autobuffer: true, id: "player1")
+  %td
+    .desc
+      .h4
+        Description
+      .desctext
+        %p
+          = video.description
+
+
+/ %td
+/   .row
+/     .large-12.columns
+/       %h3
+/         = video.name
+/   .row
+/     .large-12.columns.vid
+/       .large-8.columns
+/         = video_tag(video.source, size: "640x360", autobuffer: true, id: "player1")
+/       .large-4.columns
+/         .desc
+/           .h4
+/             Description
+/           .desctext
+/             %p
+/               = video.description
+
+:javascript
+  // using jQuery
+  $('video,audio').mediaelementplayer(/* Options */);
