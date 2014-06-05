@@ -21,7 +21,6 @@ gem 'best_in_place',
 
 # ADMINISTRATION/MANAGEMENT ##################################################
 gem 'devise'
-gem 'cancan'
 gem 'rolify'
 
 
